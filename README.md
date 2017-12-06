@@ -10,9 +10,5 @@ Install with composer:
 composer require genial-framework/env
 ```
 
-Requires PHP 7.0 or newer.
-
-Other
-------------
 - File issues at https://github.com/Genial-Framework/Env/issues
 - Documentation is at https://genial.tech/php/genial-framework/components/env/docs/
