@@ -9,10 +9,8 @@
  */
 
 namespace Genial\Env;
-
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\UnexpectedValueException;
-
 /**
  * Env.
  */
