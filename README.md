@@ -2,7 +2,7 @@
 
 Env - Installation
 ----------------
-This library is used throughout Genial Framework to easy access configuration variables from the `.env.ini` file. If you installed the framework using the installer than this will automatically find your `.env.ini` file. If it is not installed using the installer you have to define a constant named `GENIAL_ROOT` and put the location the the directory your `.env.ini` file is at.
+This library is used throughout Genial Framework to easy access configuration variables from the `.env.ini` file. If you installed the framework using the installer than this will automatically find your `.env.ini` file. If it is not installed using the installer you have to define a constant named `GENIAL_ROOT` and put the directory path of your `.env.ini` file in it.
 
 Install with composer:
 
