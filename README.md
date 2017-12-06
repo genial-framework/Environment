@@ -11,5 +11,5 @@ composer require genial-framework/env
 ```
 
 Install with installer
-----------------------
+
 This component is automatically installed when you install the framework using the installer.
