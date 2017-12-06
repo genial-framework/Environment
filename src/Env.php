@@ -78,7 +78,7 @@ class Env
      *
      * @return bool|true if configuration array was set
      */
-    public function setConfig($config = [])
+    public static function setConfig($config = [])
     {
         if (!is_array($config)) {
             throw new InvalidArgumentException(sprintf(
