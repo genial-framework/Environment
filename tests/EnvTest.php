@@ -34,7 +34,7 @@ final class EnvTest extends TestCase
         $this->assertEquals('Genial', Env::getConfig('app', 'app_name'));
     }
 
-    public function testSetConfig()
+    public function testSetConfigTwo()
     {
         $this->expectException(InvalidArgumentException::class);
         Env::setConfig('fail');
