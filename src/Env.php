@@ -55,7 +55,7 @@ class Env
         }
         if (isset($env[$section])) {
             foreach ($env[$section] as $nVariable => $value) {
-                if ($variable && $nVariable == strtoupper($variable)) {
+                if (!is_null($variable) && $nVariable == strtoupper($variable)) {
                     return $value;
                 }
                 if (!$variable) {
