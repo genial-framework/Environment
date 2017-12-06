@@ -4,8 +4,8 @@
  *
  * @link      https://github.com/Genial-Framework/Genial-Framework for the canonical source repository
  *
- * @copyright Copyright (c) 2017-2017 Genial Technologies USA Inc. (https://nenglish.me/)
- * @license   https://nenglish.me/license/new-bsd New BSD License
+ * @copyright Copyright (c) 2017-2017 Genial Framework. (https://nenglish.me/php/genial-framework/)
+ * @license   https://nenglish.me/php/genial-framework/license/new-bsd/ New BSD License
  */
 
 namespace Genial\Env;
@@ -20,8 +20,12 @@ use Genial\Env\Exception\UnexpectedValueException;
  */
 class Env
 {
+    /**
+     * $config
+     *
+     * @var array|null $config The configuration array
+     */
     private static $config = null;
-
     /**
      * getConfig().
      *
@@ -33,7 +37,7 @@ class Env
      * @throws BadMethodCallException   If the $section argument is missing
      * @throws UnexpectedValueException If the $section argument is empty
      *
-     * @return array Return the configuration array based on section
+     * @return array Return the configuration array based on section and/or a variable value
      */
     public static function getConfig(string $section = null, string $variable = null)
     {
@@ -77,7 +81,7 @@ class Env
      *
      * Set the current configuration
      *
-     * @param array|array() $config The configuration array to use
+     * @param array|[] $config The configuration array to use
      *
      * @throws InvalidArgumentException If $config is not an array
      *
