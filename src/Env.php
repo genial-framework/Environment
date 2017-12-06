@@ -72,7 +72,7 @@ class Env
      *
      * Set the current configuration
      *
-     * @param array|[] $config  The configuration array to use
+     * @param array|[] $config The configuration array to use
      *
      * @return void
      */
