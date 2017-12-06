@@ -13,8 +13,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
-        "ext-mbstring": "*"
+        "php": "^7.0"
     },
     "autoload": {
         "files": ["main.bootstrap.php"]
