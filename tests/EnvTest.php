@@ -10,6 +10,7 @@
 
 namespace Genial\Env;
 
+use Genial\Env\Exception\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -32,4 +33,12 @@ final class EnvTest extends TestCase
     {
         $this->assertEquals('Genial', Env::getConfig('app', 'app_name'));
     }
+    
+    public function testSetConfig() {
+        
+        $this->expectException(InvalidArgumentException::class);
+        Env::setConfig('fail')
+        
+    }
+    
 }
