@@ -37,7 +37,7 @@ final class EnvTest extends TestCase
     public function testSetConfig() {
         
         $this->expectException(InvalidArgumentException::class);
-        Env::setConfig('fail')
+        Env::setConfig('fail');
         
     }
     
