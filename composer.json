@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Genial": "src/",
+            "Genial": "src/"
         },
         "files": ["main.bootstrap.php"]
     },
