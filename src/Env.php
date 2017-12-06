@@ -79,6 +79,7 @@ class Env
     public function setConfig(array $config = [])
     {
         self::$config = $config;
+
         return true;
     }
 }
