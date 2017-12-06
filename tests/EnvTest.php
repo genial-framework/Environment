@@ -10,6 +10,7 @@
 
 namespace Genial\Env;
 
+use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
@@ -29,6 +30,12 @@ final class EnvTest extends TestCase
         ],
     ];
 
+    public function testGetConfigFive()
+    {
+        $this->expectException(RuntimeException::class);
+        Env::getConfig('app');
+    }
+    
     public function testSetConfig()
     {
         $this->assertTrue(Env::setConfig($this->exampleConfig));
