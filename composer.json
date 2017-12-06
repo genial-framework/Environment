@@ -1,8 +1,8 @@
 {
     "name": "genial-framework/env",
     "type": "library",
-    "description": "A simple, fast, and secure session component built for web development!",
-    "homepage": "https://genial.tech/php/genial-framework/components/session",
+    "description": "A wrapper for managing the framework configuration details!",
+    "homepage": "https://genial.tech/php/genial-framework/components/env",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -14,22 +14,13 @@
     ],
     "require": {
         "php": "^7.0",
-        "genial-framework/env": "1.*",
-        "genial-framework/helper-class": "1.*"
+        "ext-mbstring": "*"
     },
     "autoload": {
-        "psr-0": {
-            "Genial": "src"
-        }
+        "files": ["main.bootstrap.php"]
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5"
-    },
-    "suggest": {
-        "genial-framework/cache": "1.*",
-        "genial-framework/mongodb": "1.*",
-        "genial-framework/database": "1.*",
-        "genial-framework/cyptography": "1.*"
     },
     "scripts": {
         "test": "./vendor/bin/phpunit"
