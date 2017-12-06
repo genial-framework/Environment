@@ -53,10 +53,9 @@ final class EnvTest extends TestCase
         $this->expectException(UnexpectedValueException::class);
         Env::getConfig('');
     }
-    
+
     public function testGetConfigFour()
     {
         $this->assertEquals(['app_name' => 'Genial'], Env::getConfig('app'));
     }
-    
 }
