@@ -16,6 +16,9 @@
         "php": "^7.0"
     },
     "autoload": {
+        "psr-4": {
+            "Genial": "src/",
+        },
         "files": ["main.bootstrap.php"]
     },
     "require-dev": {
