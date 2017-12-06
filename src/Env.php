@@ -72,11 +72,11 @@ class Env
      *
      * Set the current configuration
      *
-     * @param array|[] $config The configuration array to use
+     * @param array|array() $config The configuration array to use
      *
      * @return bool|true if configuration array was set
      */
-    public function setConfig(array $config = [])
+    public function setConfig(array $config = array())
     {
         self::$config = $config;
 
