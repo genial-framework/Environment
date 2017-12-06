@@ -19,7 +19,7 @@ use Genial\Env\Env;
 final class EnvTest extends TestCase {
     private $exampleConfig = [];
     function __construct() {
-        $this->exampleConfig = parse_ini_file(__DIR__ . '/../.env.test.ini')
+        $this->exampleConfig = parse_ini_file(__DIR__ . '/../.env.test.ini');
     }
     public function testSetConfig() {
         $this->assertTrue(Env::setConfig($this->exampleConfig));
