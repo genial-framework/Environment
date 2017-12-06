@@ -35,14 +35,14 @@ class Env
      */
     public static function getConfig(string $section = null, string $variable = null)
     {
-        if (!$name) {
+        if (!$section) {
             throw new BadMethodCallException(sprintf(
                 '"%s" expects the "$section" argument.',
                 __METHOD__
             ));
         }
-        $name = trim($name);
-        if (empty($name) || $name == '') {
+        $section = trim($section);
+        if (empty($section) || $section == '') {
             throw new UnexpectedValueException(sprintf(
                 '"%s" expects "$section" to not be empty.',
                 __METHOD__
