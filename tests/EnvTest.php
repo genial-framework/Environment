@@ -17,12 +17,11 @@ use PHPUnit\Framework\TestCase;
  */
 final class EnvTest extends TestCase
 {
-    private $exampleConfig = [];
-
-    public function __construct()
-    {
-        $this->exampleConfig = parse_ini_file(__DIR__.'/../.env.test.ini');
-    }
+    private $exampleConfig = [
+        'app' => [
+            'app_name' => 'Genial'
+        ]
+    ];
 
     public function testSetConfig()
     {
