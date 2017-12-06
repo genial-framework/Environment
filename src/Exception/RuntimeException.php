@@ -1,6 +1,6 @@
 <?php
 /**
- * Genial Framework (https://genial.tech/php/genial-framework/).
+ * Genial Framework (https://nenglish.me/php/genial-framework/).
  *
  * @link      https://github.com/Genial-Framework/Genial-Framework for the canonical source repository
  *
