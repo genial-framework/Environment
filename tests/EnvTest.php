@@ -56,6 +56,6 @@ final class EnvTest extends TestCase
 
     public function testGetConfigFour()
     {
-        $this->assertEquals(['app_name' => 'Genial'], Env::getConfig('app'));
+        $this->assertEquals(['APP_NAME' => 'Genial'], Env::getConfig('app'));
     }
 }
