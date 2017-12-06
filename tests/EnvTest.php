@@ -7,20 +7,24 @@
  * @copyright Copyright (c) 2017-2017 Genial Technologies USA Inc. (https://genial.tech/)
  * @license   https://genial.tech/license/new-bsd New BSD License
  */
+
 namespace Genial\Env\Tests;
+
 use Genial\Env\Env as GenialEnv;
 use PHPUnit\Framework\TestCase;
+
 /**
- * EnvTest
+ * EnvTest.
  */
 final class EnvTest extends TestCase
 {
     /* Example Configuration */
     private $config = [
         'session' => [
-            'SESSION_NAME' => 'GenialTest'
-        ]
+            'SESSION_NAME' => 'GenialTest',
+        ],
     ];
+
     /**
      * getConfigTest().
      *
