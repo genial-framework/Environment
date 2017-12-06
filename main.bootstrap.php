@@ -9,7 +9,7 @@
  */
 use Genial\Env\Env;
 
-$env = parse_ini_file(APP_ROOT . '/.env.ini', true, INI_SCANNER_RAW);
+$env = parse_ini_file(APP_ROOT.'/.env.ini', true, INI_SCANNER_RAW);
 Env::setConfig($env);
 function env($section, $variable = null)
 {
