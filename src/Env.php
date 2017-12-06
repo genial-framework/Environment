@@ -10,6 +10,7 @@
 
 namespace Genial\Env;
 
+use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
@@ -50,7 +51,10 @@ class Env
             ));
         }
         if (!self::$config) {
-            $env = parse_ini_file(GENIAL_ROOT.'/.env.ini', true, INI_SCANNER_RAW);
+            throw new RuntimeException(sprintf(
+                '"%s" expects "self::$config" to be set.',
+                __METHOD__
+            ));
         } else {
             $env = self::$config;
         }
