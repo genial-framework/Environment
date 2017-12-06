@@ -5,3 +5,5 @@ composer.lock
 /docs/
 README.md
 CONTRIBUTING.md
+.coveralls.yml
+phpunit.xml
