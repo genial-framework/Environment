@@ -78,7 +78,7 @@ class Env
      *
      * @return array Return the configuration array based on section
      */
-    public function setConfig(array $config = array) {
+    public function setConfig(array $config = array()) {
         self::$config = $config;
     }
 }
