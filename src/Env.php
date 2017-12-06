@@ -76,7 +76,7 @@ class Env
      *
      * @return bool|true if configuration array was set
      */
-    public function setConfig(array $config = array())
+    public function setConfig(array $config = [])
     {
         self::$config = $config;
 
