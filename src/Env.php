@@ -84,9 +84,10 @@ class Env
             throw new InvalidArgumentException(sprintf(
                 '"%s" expects the "$config" to be an array.',
                 __METHOD__
-            )); 
+            ));
         }
         self::$config = $config;
+
         return true;
     }
 }
