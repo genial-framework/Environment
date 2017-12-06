@@ -4,8 +4,8 @@
  *
  * @link      https://github.com/Genial-Framework/Genial-Framework for the canonical source repository
  *
- * @copyright Copyright (c) 2017-2017 Genial Technologies USA Inc. (https://nenglish.me/)
- * @license   https://nenglish.me/license/new-bsd New BSD License
+ * @copyright Copyright (c) 2017-2017 Genial Framework. (https://nenglish.me/php/genial-framework/)
+ * @license   https://nenglish.me/php/genial-framework/license/new-bsd/ New BSD License
  */
 
 namespace Genial\Env;
@@ -30,46 +30,46 @@ final class EnvTest extends TestCase
         ],
     ];
 
-    public function testGetConfigStart()
+    public function test1()
     {
         $this->expectException(RuntimeException::class);
         Env::getConfig('app');
     }
 
-    public function testSetConfig()
+    public function test2()
     {
         $this->assertTrue(Env::setConfig($this->exampleConfig));
     }
 
-    public function testGetConfig()
+    public function test3()
     {
         $this->assertEquals('Genial', Env::getConfig('app', 'app_name'));
     }
 
-    public function testSetConfigTwo()
+    public function test4()
     {
         $this->expectException(InvalidArgumentException::class);
         Env::setConfig('fail');
     }
 
-    public function testGetConfigTwo()
+    public function test5()
     {
         $this->expectException(BadMethodCallException::class);
         Env::getConfig();
     }
 
-    public function testGetConfigThree()
+    public function test6()
     {
         $this->expectException(UnexpectedValueException::class);
         Env::getConfig('');
     }
 
-    public function testGetConfigFour()
+    public function test7()
     {
         $this->assertEquals(['APP_NAME' => 'Genial'], Env::getConfig('app'));
     }
 
-    public function testGetConfigFive()
+    public function test8()
     {
         $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
     }
