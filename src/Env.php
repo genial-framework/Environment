@@ -19,6 +19,7 @@ use Genial\Env\Exception\UnexpectedValueException;
 class Env
 {
     private static $config = null;
+
     /**
      * getConfig().
      *
@@ -65,6 +66,7 @@ class Env
         doReturn:
         return $env[$section];
     }
+
     /**
      * setConfig().
      *
@@ -78,7 +80,8 @@ class Env
      *
      * @return array Return the configuration array based on section
      */
-    public function setConfig(array $config = array()) {
+    public function setConfig(array $config = [])
+    {
         self::$config = $config;
     }
 }
