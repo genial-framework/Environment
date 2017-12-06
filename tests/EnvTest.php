@@ -10,8 +10,8 @@
 
 namespace Genial\Env;
 
-use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\BadMethodCallException;
+use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
 use PHPUnit\Framework\TestCase;
 
@@ -41,17 +41,16 @@ final class EnvTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         Env::setConfig('fail');
     }
-    
+
     public function testGetConfigTwo()
     {
         $this->expectException(BadMethodCallException::class);
         Env::getConfig();
     }
-    
+
     public function testGetConfigThree()
     {
         $this->expectException(UnexpectedValueException::class);
         Env::getConfig('');
     }
-    
 }
