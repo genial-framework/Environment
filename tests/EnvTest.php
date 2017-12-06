@@ -19,7 +19,7 @@ final class EnvTest extends TestCase
 {
     private $exampleConfig = [
         'app' => [
-            'app_name' => 'Genial',
+            'APP_NAME' => 'Genial',
         ],
     ];
 
