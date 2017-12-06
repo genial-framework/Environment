@@ -72,13 +72,9 @@ class Env
      *
      * Set the current configuration
      *
-     * @param string|null $section  The configuration section to access
-     * @param string|null $variable The configuration variable name to access
+     * @param array|[] $config  The configuration array to use
      *
-     * @throws BadMethodCallException   If the $section argument is missing
-     * @throws UnexpectedValueException If the $section argument is empty
-     *
-     * @return array Return the configuration array based on section
+     * @return void
      */
     public function setConfig(array $config = [])
     {
