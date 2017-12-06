@@ -24,6 +24,9 @@ final class EnvTest extends TestCase
         'app' => [
             'APP_NAME' => 'Genial',
         ],
+        'randomSection' => [
+            'HELLO' => 'world',
+        ],
     ];
 
     public function testSetConfig()
@@ -57,5 +60,10 @@ final class EnvTest extends TestCase
     public function testGetConfigFour()
     {
         $this->assertEquals(['APP_NAME' => 'Genial'], Env::getConfig('app'));
+    }
+    
+    public function testGetConfigFive()
+    {
+        $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
     }
 }
