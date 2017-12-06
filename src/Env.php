@@ -74,12 +74,19 @@ class Env
      *
      * @param array|array() $config The configuration array to use
      *
+     * @throws InvalidArgumentException If $config is not an array
+     *
      * @return bool|true if configuration array was set
      */
-    public function setConfig(array $config = [])
+    public function setConfig($config = [])
     {
+        if (!is_array($config)) {
+            throw new InvalidArgumentException(sprintf(
+                '"%s" expects the "$config" to be an array.',
+                __METHOD__
+            )); 
+        }
         self::$config = $config;
-
         return true;
     }
 }
