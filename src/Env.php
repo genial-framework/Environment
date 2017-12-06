@@ -21,11 +21,12 @@ use Genial\Env\Exception\UnexpectedValueException;
 class Env
 {
     /**
-     * $config
+     * $config.
      *
-     * @var array|null $config The configuration array
+     * @var array|null The configuration array
      */
     private static $config = null;
+
     /**
      * getConfig().
      *
