@@ -7,6 +7,9 @@
  * @copyright Copyright (c) 2017-2017 Genial Technologies USA Inc. (https://genial.tech/)
  * @license   https://genial.tech/license/new-bsd New BSD License
  */
-function env()
+use Genial\Env\Env;
+
+function env($section, $variable = null)
 {
+    return Env::getConfig($section, $variable);
 }
