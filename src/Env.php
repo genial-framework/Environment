@@ -74,10 +74,11 @@ class Env
      *
      * @param array|[] $config The configuration array to use
      *
-     * @return void
+     * @return bool|true if configuration array was set
      */
     public function setConfig(array $config = [])
     {
         self::$config = $config;
+        return true;
     }
 }
