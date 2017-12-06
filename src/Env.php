@@ -36,7 +36,7 @@ class Env
      */
     public static function getConfig(string $section = null, string $variable = null)
     {
-        if (!$section) {
+        if (is_null($section)) {
             throw new BadMethodCallException(sprintf(
                 '"%s" expects the "$section" argument.',
                 __METHOD__
