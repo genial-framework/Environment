@@ -30,7 +30,7 @@ final class EnvTest extends TestCase
      *
      * @return void
      */
-    public function getConfigTest()
+    public function testGetConfig()
     {
         GenialEnv::setConfig($this->config);
         $this->assertEquals(
