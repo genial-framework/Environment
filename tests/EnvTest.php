@@ -30,7 +30,7 @@ final class EnvTest extends TestCase
         ],
     ];
 
-    public function testGetConfigFive()
+    public function testGetConfigStart()
     {
         $this->expectException(RuntimeException::class);
         Env::getConfig('app');
