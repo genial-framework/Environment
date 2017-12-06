@@ -9,22 +9,28 @@
  */
 
 namespace Genial\Env;
+
 use PHPUnit\Framework\TestCase;
-use Genial\Env\Exception\BadMethodCallException;
-use Genial\Env\Exception\UnexpectedValueException;
-use Genial\Env\Env;
+
 /**
- * EnvTest
+ * EnvTest.
  */
-final class EnvTest extends TestCase {
+final class EnvTest extends TestCase
+{
     private $exampleConfig = [];
-    function __construct() {
-        $this->exampleConfig = parse_ini_file(__DIR__ . '/../.env.test.ini');
+
+    public function __construct()
+    {
+        $this->exampleConfig = parse_ini_file(__DIR__.'/../.env.test.ini');
     }
-    public function testSetConfig() {
+
+    public function testSetConfig()
+    {
         $this->assertTrue(Env::setConfig($this->exampleConfig));
     }
-    public function testGetConfig() {
+
+    public function testGetConfig()
+    {
         $this->assertEquals('Genial', Env::getConfig('app', 'app_name'));
     }
 }
