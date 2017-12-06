@@ -2,13 +2,13 @@
     "name": "genial-framework/env",
     "type": "library",
     "description": "A wrapper for managing the framework configuration details!",
-    "homepage": "https://genial.tech/php/genial-framework/components/env",
+    "homepage": "https://nenglish.me/php/genial-framework/components/env",
     "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Nicholas English",
             "email": "nenglish0820@outlook.com",
-            "homepage": "https://genial.tech/php/genial-framework/authors/nenglish",
+            "homepage": "https://nenglish.me/php/genial-framework/authors/nenglish",
             "role": "Developer"
         }
     ],
