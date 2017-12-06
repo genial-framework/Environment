@@ -9,6 +9,6 @@ Install with composer:
 ```sh
 composer require genial-framework/env
 ```
-
+-------
 - File issues at https://github.com/Genial-Framework/Env/issues
 - Documentation is at https://genial.tech/php/genial-framework/components/env/docs/
