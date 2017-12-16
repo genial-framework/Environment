@@ -59,7 +59,7 @@ if (file_exists(APP_ROOT.'/.env.ini')) {
     Env::setConfig($defaultConfig);
 }
 
-/**
+/*
  * Unset all variables.
  */
 unset($env);
