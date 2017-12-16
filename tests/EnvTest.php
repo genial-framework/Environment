@@ -74,9 +74,9 @@ final class EnvTest extends TestCase
     {
         $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
     }
-    
+
     public function test9()
     {
-        $this->assertTrue(!Env::clearConfig());
+        $this->assertTrue(! Env::clearConfig());
     }
 }
