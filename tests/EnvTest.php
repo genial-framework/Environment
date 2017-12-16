@@ -32,6 +32,7 @@ final class EnvTest extends TestCase
             'HELLO' => 'world',
         ],
     ];
+
     public function test()
     {
         $this->expectException(RuntimeException::class);
