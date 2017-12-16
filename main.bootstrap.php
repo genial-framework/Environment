@@ -10,7 +10,6 @@
  * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
  * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
  */
-
 use Genial\Env\Env;
 
 define('ENV_ADAPTER_ACTIVE', true);
@@ -21,22 +20,22 @@ define('ENV_ADAPTER_ACTIVE', true);
 $defaultConfig = [
     'application' => [
         'APP_SECRET_KEY' => null,
-        'APP_NAME' => 'Genial',
-        'DEBUG' => false,
-        'LOG' => true,
+        'APP_NAME'       => 'Genial',
+        'DEBUG'          => false,
+        'LOG'            => true,
     ],
     'server' => [
         'FORCE_HTTPS' => false,
     ],
     'session' => [
-        'SESSION_NAME' => 'Genial',
+        'SESSION_NAME'    => 'Genial',
         'SESSION_ENCRYPT' => true,
-        'SESSION_ENCODE' => true,
+        'SESSION_ENCODE'  => true,
     ],
     'cookie' => [
-        'COOKIE_LIFETIME' => 0,
-        'COOKIE_PATH' => '/',
-        'COOKIE_DOMAIN' => ini_get('session.cookie_domain'),
+        'COOKIE_LIFETIME'  => 0,
+        'COOKIE_PATH'      => '/',
+        'COOKIE_DOMAIN'    => ini_get('session.cookie_domain'),
         'COOKIE_HTTP_ONLY' => true,
     ],
     'database' => [
@@ -47,19 +46,16 @@ $defaultConfig = [
     ],
     'route' => [
         'ROUTING_ENABLED' => false,
-    ]
+    ],
 ];
 
-/**
+/*
  * Check to see if a configuration file exists.
  */
-if (file_exists(APP_ROOT.'/.env.ini'))
-{
+if (file_exists(APP_ROOT.'/.env.ini')) {
     $env = parse_ini_file(APP_ROOT.'/.env.ini', true, INI_SCANNER_RAW);
     Env::setConfig($env);
-}    
-else
-{
+} else {
     Env::setConfig($defaultConfig);
 }
 
