@@ -24,7 +24,7 @@ use Genial\Env\Exception\UnexpectedValueException;
 class Env
 {
     /**
-     * @var array|null $config The configuration array
+     * @var array|null The configuration array
      */
     private static $config = null;
 
@@ -43,42 +43,33 @@ class Env
      */
     public static function getConfig(string $section = null, string $variable = null)
     {
-        if (is_null($section))
-        {
+        if (is_null($section)) {
             throw new BadMethodCallException(sprintf(
                 '"%s" expects the "$section" argument.',
                 __METHOD__
             ));
         }
         $section = trim($section);
-        if (empty($section) || $section == '')
-        {
+        if (empty($section) || $section == '') {
             throw new UnexpectedValueException(sprintf(
                 '"%s" expects "$section" to not be empty.',
                 __METHOD__
             ));
         }
-        if (! self::$config)
-        {
+        if (! self::$config) {
             throw new RuntimeException(sprintf(
                 '"%s" expects "self::$config" to be set.',
                 __METHOD__
             ));
-        }
-        else
-        {
+        } else {
             $env = self::$config;
         }
-        if (isset($env[$section]))
-        {
-            foreach ($env[$section] as $nVariable => $value)
-            {
-                if (! is_null($variable) && $nVariable == strtoupper($variable))
-                {
+        if (isset($env[$section])) {
+            foreach ($env[$section] as $nVariable => $value) {
+                if (! is_null($variable) && $nVariable == strtoupper($variable)) {
                     return $value;
                 }
-                if (! $variable)
-                {
+                if (! $variable) {
                     goto doReturn;
                 }
             }
@@ -100,8 +91,7 @@ class Env
      */
     public static function setConfig($config = [])
     {
-        if (! is_array($config))
-        {
+        if (! is_array($config)) {
             throw new InvalidArgumentException(sprintf(
                 '"%s" expects the "$config" to be an array.',
                 __METHOD__
