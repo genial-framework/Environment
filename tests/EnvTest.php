@@ -15,10 +15,10 @@ namespace Genial\Env;
 
 use PHPUnit\Framework\TestCase;
 use Genial\Env\Exception\RuntimeException;
+use Genial\Env\Exception\UnderflowException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
-use Genial\Env\Exception\UnderflowException;
 
 /**
  * EnvTest.
@@ -83,7 +83,7 @@ final class EnvTest extends TestCase
     {
         $this->assertTrue(! Env::clearConfig());
     }
-    
+
     public function test9()
     {
         $this->expectException(UnderflowException::class);
