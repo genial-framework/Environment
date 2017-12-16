@@ -1,9 +1,11 @@
 .travis.yml
 composer.json
 composer.lock
+composer.phar
 /vendor/
 /docs/
 README.md
-CONTRIBUTING.md
+LICENSE.md
 .coveralls.yml
 phpunit.xml
+.styleci.yml
