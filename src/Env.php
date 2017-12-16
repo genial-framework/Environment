@@ -101,7 +101,7 @@ class Env
 
         return true;
     }
-    
+
     /**
      * clearConfig().
      *
