@@ -48,7 +48,7 @@ $defaultConfig = [
     'route' => [
         'ROUTING_ENABLED' => false,
     ]
-]
+];
 
 /**
  * Check to see if a configuration file exists.
