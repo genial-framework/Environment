@@ -84,7 +84,7 @@ final class EnvTest extends TestCase
         $this->expectException(UnderflowException::class);
         Env::getConfig('muzzle');
     }
-    
+
     public function test8()
     {
         $this->assertTrue(! Env::clearConfig());
