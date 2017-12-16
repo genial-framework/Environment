@@ -60,6 +60,12 @@ if (file_exists(APP_ROOT.'/.env.ini')) {
 }
 
 /**
+ * Unset all variables.
+ */
+unset($env);
+unset($defaultConfig);
+
+/**
  * Create an easy access function for configuration variables.
  */
 function env($section, $variable = null)
