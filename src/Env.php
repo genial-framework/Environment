@@ -38,6 +38,7 @@ class Env
      *
      * @throws BadMethodCallException   If the $section argument is missing
      * @throws UnexpectedValueException If the $section argument is empty
+     * @throws OverflowException        If the $section argument does not exist
      *
      * @return array Return the configuration array based on section and/or a variable value
      */
@@ -45,20 +46,20 @@ class Env
     {
         if (is_null($section)) {
             throw new BadMethodCallException(sprintf(
-                '"%s" expects the "$section" argument.',
+                '`%s` expects the `$section` argument.',
                 __METHOD__
             ));
         }
         $section = trim($section);
         if (empty($section) || $section == '') {
             throw new UnexpectedValueException(sprintf(
-                '"%s" expects "$section" to not be empty.',
+                '`%s` expects `$section` to not be empty.',
                 __METHOD__
             ));
         }
         if (! self::$config) {
             throw new RuntimeException(sprintf(
-                '"%s" expects "self::$config" to be set.',
+                '`%s` expects `self::$config` to be set.',
                 __METHOD__
             ));
         } else {
@@ -74,6 +75,10 @@ class Env
                 }
             }
         }
+        throw new UnderflowException(sprintf(
+            '`%s` expects the section to be present in the configuration array.',
+            __METHOD__
+        ));
         doReturn:
         return $env[$section];
     }
@@ -93,7 +98,7 @@ class Env
     {
         if (! is_array($config)) {
             throw new InvalidArgumentException(sprintf(
-                '"%s" expects the "$config" to be an array.',
+                '`%s` expects the `$config` to be an array.',
                 __METHOD__
             ));
         }
