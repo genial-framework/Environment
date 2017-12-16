@@ -10,9 +10,9 @@
 
 namespace Genial\Env;
 
+use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
-use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\UnexpectedValueException;
 
 /**
@@ -55,7 +55,7 @@ class Env
                 __METHOD__
             ));
         }
-        if (!self::$config) {
+        if (! self::$config) {
             throw new RuntimeException(sprintf(
                 '"%s" expects "self::$config" to be set.',
                 __METHOD__
@@ -65,10 +65,10 @@ class Env
         }
         if (isset($env[$section])) {
             foreach ($env[$section] as $nVariable => $value) {
-                if (!is_null($variable) && $nVariable == strtoupper($variable)) {
+                if (! is_null($variable) && $nVariable == strtoupper($variable)) {
                     return $value;
                 }
-                if (!$variable) {
+                if (! $variable) {
                     goto doReturn;
                 }
             }
@@ -90,7 +90,7 @@ class Env
      */
     public static function setConfig($config = [])
     {
-        if (!is_array($config)) {
+        if (! is_array($config)) {
             throw new InvalidArgumentException(sprintf(
                 '"%s" expects the "$config" to be an array.',
                 __METHOD__

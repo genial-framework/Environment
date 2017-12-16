@@ -10,11 +10,11 @@
 
 namespace Genial\Env;
 
+use PHPUnit\Framework\TestCase;
+use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
-use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\UnexpectedValueException;
-use PHPUnit\Framework\TestCase;
 
 /**
  * EnvTest.
