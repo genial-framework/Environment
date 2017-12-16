@@ -33,6 +33,7 @@ final class EnvTest extends TestCase
     public function test1()
     {
         $this->expectException(RuntimeException::class);
+        Env::clearConfig();
         Env::getConfig('app');
     }
 
@@ -72,5 +73,10 @@ final class EnvTest extends TestCase
     public function test8()
     {
         $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
+    }
+    
+    public function test9()
+    {
+        $this->assertTrue(!Env::clearConfig());
     }
 }
