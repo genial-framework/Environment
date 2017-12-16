@@ -79,14 +79,14 @@ final class EnvTest extends TestCase
         $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
     }
 
-    public function test8()
-    {
-        $this->assertTrue(! Env::clearConfig());
-    }
-
     public function test9()
     {
         $this->expectException(UnderflowException::class);
         Env::getConfig('muzzle');
+    }
+    
+    public function test8()
+    {
+        $this->assertTrue(! Env::clearConfig());
     }
 }
