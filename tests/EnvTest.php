@@ -18,6 +18,7 @@ use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
+use Genial\Env\Exception\UnderflowException;
 
 /**
  * EnvTest.
@@ -81,5 +82,11 @@ final class EnvTest extends TestCase
     public function test8()
     {
         $this->assertTrue(! Env::clearConfig());
+    }
+    
+    public function test9()
+    {
+        $this->expectException(UnderflowException::class);
+        Env::getConfig('muzzle');
     }
 }
