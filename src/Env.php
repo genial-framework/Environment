@@ -41,6 +41,7 @@ class Env
      * @throws UnexpectedValueException If the $section argument is empty
      * @throws OverflowException        If the $section argument does not exist
      * @throws RuntimeException         If there is no configuration array set
+     * @throws LengthException          If the request vriables are too long
      *
      * @return array Return the configuration array based on section and/or a variable value
      */
@@ -56,6 +57,13 @@ class Env
         if (empty($section) || $section == '') {
             throw new UnexpectedValueException(sprintf(
                 '`%s` expects `$section` to not be empty.',
+                __METHOD__
+            ));
+        }
+        if (mb_strlen($section) > 250 && mb_strlen($variable) > 250)
+        {
+            throw new LengthException(sprintf(
+                '`%s` detects `$section` `$variable` is too long.',
                 __METHOD__
             ));
         }
