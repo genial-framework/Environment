@@ -14,8 +14,8 @@
 namespace Genial\Env\Exception;
 
 /**
- * OverflowException.
+ * UnderflowException.
  */
-class OverflowException extends \OverflowException implements ExceptionInterface
+class UnderflowException extends \UnderflowException implements ExceptionInterface
 {
 }
