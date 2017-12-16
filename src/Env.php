@@ -112,5 +112,7 @@ class Env
     public static function clearConfig()
     {
         self::$config = false;
+        
+        return false;
     }
 }
