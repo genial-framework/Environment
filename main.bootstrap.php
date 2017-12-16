@@ -52,7 +52,7 @@ $defaultConfig = [
 /*
  * Check to see if a configuration file exists.
  */
-if (defined(APP_ROOT) && file_exists(APP_ROOT.'/.env.ini')) {
+if (defined('APP_ROOT') && file_exists(APP_ROOT.'/.env.ini')) {
     $env = parse_ini_file(APP_ROOT.'/.env.ini', true, INI_SCANNER_RAW);
     Env::setConfig($env);
 } else {
