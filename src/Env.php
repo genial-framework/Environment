@@ -40,6 +40,7 @@ class Env
      * @throws BadMethodCallException   If the $section argument is missing
      * @throws UnexpectedValueException If the $section argument is empty
      * @throws OverflowException        If the $section argument does not exist
+     * @throws RuntimeException         If there is no configuration array set
      *
      * @return array Return the configuration array based on section and/or a variable value
      */
