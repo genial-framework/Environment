@@ -101,4 +101,16 @@ class Env
 
         return true;
     }
+    
+    /**
+     * clearConfig().
+     *
+     * Clear the current configuration
+     *
+     * @return void
+     */
+    public static function clearConfig()
+    {
+        self::$config = false;
+    }
 }
