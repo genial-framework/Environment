@@ -1,6 +1,14 @@
 {
     "name": "genial-framework/env",
     "type": "library",
+    "keywords": [
+        "php7",
+        "library",
+        "php-framework",
+        "genial-framework",
+        "enviroment",
+        "configuration"
+    ],
     "description": "Env configuration file adapter for Genial Framework.",
     "homepage": "https://github.com/Genial-Framework/Env",
     "license": "BSD-3-Clause",
