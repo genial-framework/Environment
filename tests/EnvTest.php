@@ -32,53 +32,52 @@ final class EnvTest extends TestCase
             'HELLO' => 'world',
         ],
     ];
-
-    public function test1()
+    public function test()
     {
         $this->expectException(RuntimeException::class);
         Env::clearConfig();
         Env::getConfig('app');
     }
 
-    public function test2()
+    public function test1()
     {
         $this->assertTrue(Env::setConfig($this->exampleConfig));
     }
 
-    public function test3()
+    public function test2()
     {
         $this->assertEquals('Genial', Env::getConfig('app', 'app_name'));
     }
 
-    public function test4()
+    public function test3()
     {
         $this->expectException(InvalidArgumentException::class);
         Env::setConfig('fail');
     }
 
-    public function test5()
+    public function test4()
     {
         $this->expectException(BadMethodCallException::class);
         Env::getConfig();
     }
 
-    public function test6()
+    public function test5()
     {
         $this->expectException(UnexpectedValueException::class);
         Env::getConfig('');
     }
 
-    public function test7()
+    public function test6()
     {
         $this->assertEquals(['APP_NAME' => 'Genial'], Env::getConfig('app'));
     }
 
-    public function test8()
+    public function test7()
     {
         $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
     }
 
-    public function test9()
+    public function test8()
     {
         $this->assertTrue(! Env::clearConfig());
     }
