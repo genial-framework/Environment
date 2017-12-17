@@ -18,6 +18,7 @@ use Genial\Env\Exception\UnderflowException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
+use Genial\Env\Exception\LengthException;
 
 /**
  * Env.
