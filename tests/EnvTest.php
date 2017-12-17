@@ -14,12 +14,12 @@
 namespace Genial\Env;
 
 use PHPUnit\Framework\TestCase;
+use Genial\Env\Exception\LengthException;
 use Genial\Env\Exception\RuntimeException;
 use Genial\Env\Exception\UnderflowException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
-use Genial\Env\Exception\LengthException;
 
 /**
  * EnvTest.
@@ -85,7 +85,7 @@ final class EnvTest extends TestCase
         $this->expectException(UnderflowException::class);
         Env::getConfig('muzzle');
     }
-    
+
     public function test9()
     {
         $this->expectException(LengthException::class);
