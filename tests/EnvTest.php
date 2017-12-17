@@ -19,6 +19,7 @@ use Genial\Env\Exception\UnderflowException;
 use Genial\Env\Exception\BadMethodCallException;
 use Genial\Env\Exception\InvalidArgumentException;
 use Genial\Env\Exception\UnexpectedValueException;
+use Genial\Env\Exception\LengthException;
 
 /**
  * EnvTest.
@@ -79,13 +80,19 @@ final class EnvTest extends TestCase
         $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
     }
 
-    public function test9()
+    public function test8()
     {
         $this->expectException(UnderflowException::class);
         Env::getConfig('muzzle');
     }
+    
+    public function test9()
+    {
+        $this->expectException(LengthException::class);
+        Env::getConfig('\'*w[+,8H&F:LE}^F8s;2H{+S`VG$6\'sRWbQJRsZ%A>p%3+^hWFZ4egu;LHuZaZwet]<P~WSG3("m/\'9kS+`dcL=&acT2qRrEz:,C_}=$;+.a)bRj"^[4(7()*Vgg4^Ck.3j4F_yJzHV;g27n4XWL`[m^(A:%^@b(DMm29u/t!~4,&?F2\'E89>8Kv4!P-p?rBTnfP(LaTkmE"7Kf~\s)Na+BM#`3}ra,WSr:4]}/,sMCT*Am9:absD=v)m]8MQ.P!');
+    }
 
-    public function test8()
+    public function test10()
     {
         $this->assertTrue(! Env::clearConfig());
     }
