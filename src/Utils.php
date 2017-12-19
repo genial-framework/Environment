@@ -13,11 +13,11 @@
 
 namespace Genial\Env;
 
-use Genial\Env\Exception\UnderflowException;
 use Genial\Env\Config\Config;
+use Genial\Env\Exception\UnderflowException;
 
 /**
- * Utils
+ * Utils.
  */
 class Utils
 {
@@ -30,16 +30,15 @@ class Utils
      *
      * @return bool True if the array is valid and false if otherwise.
      */
-    public static function validConfigArray(array $config = array())
+    public static function validConfigArray(array $config = [])
     {
-        if (empty($config))
-        {
+        if (empty($config)) {
             throw new UnderflowException(sprintf(
                 '`%s` expects `$config` to not be empty.',
                 __METHOD__
             ));
         }
+
         return Config::validate($config);
-            
     }
 }
