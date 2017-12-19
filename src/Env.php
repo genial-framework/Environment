@@ -113,7 +113,7 @@ class Env
             ));
         }
 
-        return Utils::valid($config);
+        return Utils::validConfigArray($config);
     }
 
     /**
