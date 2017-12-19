@@ -32,7 +32,7 @@ class Utils
      */
     public static function validConfigArray(array $config = array())
     {
-        if (empty($config)
+        if (empty($config))
         {
             throw new UnderflowException(sprintf(
                 '`%s` expects `$config` to not be empty.',
