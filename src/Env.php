@@ -28,7 +28,7 @@ class Env
     /**
      * @var array|null The configuration array
      */
-    private static $config = null;
+    protected static $config = null;
 
     /**
      * getConfig().
@@ -112,9 +112,8 @@ class Env
                 __METHOD__
             ));
         }
-        self::$config = $config;
 
-        return true;
+        return Utils::valid($config);
     }
 
     /**
