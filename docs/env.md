@@ -3,4 +3,6 @@ The env configuration adapter is suppused to make the configifuration variables 
 ```
 [application]
 APP_NAME=Genial
+DEBUG=true
+LOG=true
 ```
