@@ -13,8 +13,6 @@
 
 namespace Genial\Env;
 
-use Genial\Env\Exception;
-
 /**
  * Env.
  */
