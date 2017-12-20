@@ -48,7 +48,7 @@ Here is a example configuration array below that will work.
     'cookie' => [
         'COOKIE_LIFETIME'  => 0,
         'COOKIE_PATH'      => '/',
-        'COOKIE_DOMAIN'    => ini_get('session.cookie_domain'),
+        'COOKIE_DOMAIN'    => 'localhost',
         'COOKIE_HTTP_ONLY' => true,
     ],
     'database' => [
