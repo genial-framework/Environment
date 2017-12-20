@@ -54,7 +54,7 @@ class Env
                 __METHOD__
             ));
         }
-        if (mb_strlen($section) > 30 || mb_strlen($variable) > 250) {
+        if (strlen($section) > 30 || strlen($variable) > 250) {
             throw new Exception\LengthException(sprintf(
                 '`%s` The `$section` or `$variable` variable is too long.',
                 __METHOD__
