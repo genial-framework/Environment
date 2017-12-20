@@ -28,14 +28,17 @@ class Config extends Env
      *
      * @param array $xconfig The configuration array.
      *
+     * @throws DomainException          If $xconfig does have a depth of 2.
+     * @throws UnexpectedValueException If the variable names are not capital letters.
+     * @throws LengthException          If the variable name or value is too long.
      *
-     * @return bool True if the configuration array is valid else return false.
+     * @return bool|true True if the configuration array is valid.
      */
     public static function validate(array $xconfig)
     {
         if (array_depth($xconfig) != 2) {
             throw new Exception\DomainException(sprintf(
-                '`%s` The configuration array does nnnot have a depth of 2.',
+                '`%s` The configuration array does not have a depth of 2.',
                 __METHOD__
             ));
         }
