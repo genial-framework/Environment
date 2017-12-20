@@ -14,7 +14,7 @@
 namespace Genial\Env;
 
 use Genial\Env\Config\Config;
-use Genial\Env\Exception\UnderflowException;
+use Genial\Env\Exception;
 
 /**
  * Utils.
@@ -33,7 +33,7 @@ class Utils
     public static function validConfigArray(array $config = [])
     {
         if (empty($config)) {
-            throw new UnderflowException(sprintf(
+            throw new Exception\UnderflowException(sprintf(
                 '`%s` expects `$config` to not be empty.',
                 __METHOD__
             ));
