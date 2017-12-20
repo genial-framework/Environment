@@ -44,7 +44,7 @@ class Config extends Env
         }
         foreach ($xconfig as $array) {
             foreach ($array as $var => $val) {
-                if (!ctype_upper(str_replace('_', '', $var))) {
+                if (! ctype_upper(str_replace('_', '', $var))) {
                     throw new Exception\UnexpectedValueException(sprintf(
                         '`%s` The configuration variable name must all be caps for it to work properly.',
                         __METHOD__
