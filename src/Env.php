@@ -13,12 +13,7 @@
 
 namespace Genial\Env;
 
-use Genial\Env\Exception\LengthException;
-use Genial\Env\Exception\RuntimeException;
-use Genial\Env\Exception\UnderflowException;
-use Genial\Env\Exception\BadMethodCallException;
-use Genial\Env\Exception\InvalidArgumentException;
-use Genial\Env\Exception\UnexpectedValueException;
+use Genial\Env\Exception;
 
 /**
  * Env.
@@ -49,26 +44,26 @@ class Env
     public static function getConfig(string $section = null, string $variable = null)
     {
         if (is_null($section)) {
-            throw new BadMethodCallException(sprintf(
+            throw new Exception\BadMethodCallException(sprintf(
                 '`%s` expects the `$section` argument.',
                 __METHOD__
             ));
         }
         $section = trim($section);
         if (empty($section) || $section == '') {
-            throw new UnexpectedValueException(sprintf(
+            throw new Exception\UnexpectedValueException(sprintf(
                 '`%s` expects `$section` to not be empty.',
                 __METHOD__
             ));
         }
         if (mb_strlen($section) > 30 || mb_strlen($variable) > 250) {
-            throw new LengthException(sprintf(
+            throw new Exception\LengthException(sprintf(
                 '`%s` detects `$section` `$variable` is too long.',
                 __METHOD__
             ));
         }
         if (! self::$config) {
-            throw new RuntimeException(sprintf(
+            throw new Exception\RuntimeException(sprintf(
                 '`%s` expects `self::$config` to be set.',
                 __METHOD__
             ));
@@ -85,7 +80,7 @@ class Env
                 }
             }
         }
-        throw new UnderflowException(sprintf(
+        throw new Exception\UnderflowException(sprintf(
             '`%s` expects the section to be present in the configuration array.',
             __METHOD__
         ));
@@ -107,7 +102,7 @@ class Env
     public static function setConfig($config = [])
     {
         if (! is_array($config)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new Exception\InvalidArgumentException(sprintf(
                 '`%s` expects the `$config` to be an array.',
                 __METHOD__
             ));
