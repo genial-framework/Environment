@@ -43,26 +43,26 @@ class Env
     {
         if (is_null($section)) {
             throw new Exception\BadMethodCallException(sprintf(
-                '`%s` expects the `$section` argument.',
+                '`%s` The `$section` argument is missing.',
                 __METHOD__
             ));
         }
         $section = trim($section);
         if (empty($section) || $section == '') {
             throw new Exception\UnexpectedValueException(sprintf(
-                '`%s` expects `$section` to not be empty.',
+                '`%s` The `$section` argument is empty.',
                 __METHOD__
             ));
         }
         if (mb_strlen($section) > 30 || mb_strlen($variable) > 250) {
             throw new Exception\LengthException(sprintf(
-                '`%s` detects `$section` `$variable` is too long.',
+                '`%s` The `$section` or `$variable` variable is too long.',
                 __METHOD__
             ));
         }
         if (! self::$config) {
             throw new Exception\RuntimeException(sprintf(
-                '`%s` expects `self::$config` to be set.',
+                '`%s` the `self::$config` is not set.',
                 __METHOD__
             ));
         } else {
@@ -79,7 +79,7 @@ class Env
             }
         }
         throw new Exception\UnderflowException(sprintf(
-            '`%s` expects the section to be present in the configuration array.',
+            '`%s` The request section name is not in the configuration array.',
             __METHOD__
         ));
         doReturn:
@@ -101,7 +101,7 @@ class Env
     {
         if (! is_array($config)) {
             throw new Exception\InvalidArgumentException(sprintf(
-                '`%s` expects the `$config` to be an array.',
+                '`%s` The `$config` variable has an invalid data type.',
                 __METHOD__
             ));
         }
