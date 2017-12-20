@@ -14,7 +14,6 @@
 namespace Genial\Env;
 
 use Genial\Env\Config\Config;
-use Genial\Env\Exception;
 
 /**
  * Utils.
