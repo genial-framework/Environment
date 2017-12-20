@@ -14,7 +14,6 @@
 namespace Genial\Env;
 
 use PHPUnit\Framework\TestCase;
-use Genial\Env\Exception;
 
 /**
  * EnvTest.
