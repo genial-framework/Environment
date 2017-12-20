@@ -33,7 +33,7 @@ class Utils
     {
         if (empty($config)) {
             throw new Exception\UnderflowException(sprintf(
-                '`%s` expects `$config` to not be empty.',
+                '`%s` The `$config` array is empty.',
                 __METHOD__
             ));
         }
