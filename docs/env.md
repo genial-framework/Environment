@@ -20,3 +20,5 @@ $debug = (bool) env('application', 'debug');
 var_dump($debug);
 ```
 The above example example will output a boolean value the evalutes to true. The first argument that is being passed if the section name so `application` would be what you would pass and for the second variable you would put `debug` to see if we hve debug enabled. Also when using the function know it does not return the variable type it will always return as a string so you would have to `$debug = (bool) env('application', 'debug');`.
+
+### Dumping the current configuration passed
