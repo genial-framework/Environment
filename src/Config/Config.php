@@ -13,10 +13,12 @@
    
 namespace Genial\Env\Config;
 
+use Genial\Env\Env;
+
 /**
  * Config.
  */
-class Config
+class Config extends Env
 {
 
 }
