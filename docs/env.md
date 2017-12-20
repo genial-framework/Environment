@@ -62,3 +62,48 @@ Here is a example configuration array below that will work.
     ]
 ]
 ```
+Then to insert it manual you would call the env class statically like shown below.
+```
+<?php
+
+/* Expects env dependent to be autoloaded. */
+
+use Genial\Env\Env;
+
+$array = [
+    'application' => [
+        'APP_SECRET_KEY' => null,
+        'APP_NAME'       => 'Genial',
+        'DEBUG'          => false,
+        'LOG'            => true,
+    ],
+    'server' => [
+        'FORCE_HTTPS' => false,
+    ],
+    'session' => [
+        'SESSION_NAME'    => 'Genial',
+        'SESSION_ENCRYPT' => true,
+        'SESSION_ENCODE'  => true,
+    ],
+    'cookie' => [
+        'COOKIE_LIFETIME'  => 0,
+        'COOKIE_PATH'      => '/',
+        'COOKIE_DOMAIN'    => 'localhost',
+        'COOKIE_HTTP_ONLY' => true,
+    ],
+    'database' => [
+        'DB_HOST' => null,
+        'DB_USER' => null,
+        'DB_PASS' => null,
+        'DB_NAME' => null,
+    ],
+    'route' => [
+        'ROUTING_ENABLED' => false,
+    ],
+];
+
+Env::setConfig($array);
+
+/* Configuration array set. */
+
+```
