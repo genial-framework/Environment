@@ -78,7 +78,7 @@ function env($section, $variable = null)
  */
 function array_depth(array $array)
 {
-    $max_depth = 1
+    $max_depth = 1;
     foreach ($array as $value)
     {
         if (is_array($value))
