@@ -25,59 +25,59 @@ final class ConfigTest extends TestCase
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate(['hello' => 'world']);
     }
-    
+
     public function test2()
     {
         $this->expectException(Exception\UnexpectedValueException::class);
         Config\Config::validate([
             'test' => [
-                'test' => 'config'
-            ]
+                'test' => 'config',
+            ],
         ]);
     }
-    
+
     public function test3()
     {
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate([
             'test' => [
                 'test' => [
-                    'FOO' => 'bar'   
-                ]
-            ]
+                    'FOO' => 'bar',
+                ],
+            ],
         ]);
     }
-    
+
     public function test3()
     {
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate([
             'test' => [
-                'test' => '949Mj3QjfN8NMWKDy6ZMeAgU7T2LHPv'
-            ]
+                'test' => '949Mj3QjfN8NMWKDy6ZMeAgU7T2LHPv',
+            ],
         ]);
     }
-    
+
     public function test3()
     {
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate([
             'test' => [
-                'WIUCHNUIWFCINQOWDIJNOIQJNWDOIJNCQIWNJDOICNJOIQWJNDCOIJNW' => 'foobar'
-            ]
+                'WIUCHNUIWFCINQOWDIJNOIQJNWDOIJNCQIWNJDOICNJOIQWJNDCOIJNW' => 'foobar',
+            ],
         ]);
     }
-    
+
     public function test4()
     {
         Env::clearConfig();
         $this->assertTrue(Config\Config::validate([
             'test' => [
-                'FOO' => 'bar'
-            ]
+                'FOO' => 'bar',
+            ],
         ]));
     }
-    
+
     public function test5()
     {
         Env::clearConfig();
