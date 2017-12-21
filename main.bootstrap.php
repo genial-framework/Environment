@@ -68,9 +68,13 @@ unset($defaultConfig);
 /**
  * Create an easy access function for configuration variables.
  */
-function env($section, $variable = null)
+function env($section, $variable = null, $defRetVal = '')
 {
-    return Env::getConfig($section, $variable);
+    try {
+        return Env::getConfig($section, $variable);
+    } catch (\Genial\Env\Exception\UnderflowException) {
+        return $defRetVal;
+    }
 }
 
 /**
