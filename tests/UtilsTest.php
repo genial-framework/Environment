@@ -28,7 +28,6 @@ final class UtilsTest extends TestCase
 
     public function test2()
     {
-        $this->expectException(Exception\UnderflowException::class);
         $this->assertTrue(Utils::validConfigArray([
             'test' => [
                 'FOO' => 'bar',
