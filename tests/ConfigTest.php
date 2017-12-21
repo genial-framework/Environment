@@ -50,7 +50,7 @@ final class ConfigTest extends TestCase
 
     public function test5()
     {
-        $this->expectException(Exception\DomainException::class);
+        $this->expectException(Exception\LengthException::class);
         Config\Config::validate([
             'test' => [
                 'WIUCHNUIWFCINQOWDIJNOIQJNWDOIJNCQIWNJDOICNJOIQWJNDCOIJNW' => 'foobar',
