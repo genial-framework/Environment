@@ -68,7 +68,7 @@ final class ConfigTest extends TestCase
         ]));
     }
 
-    function __destruct()
+    public function __destruct()
     {
         Env::clearConfig();
     }
