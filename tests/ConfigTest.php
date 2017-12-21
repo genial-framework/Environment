@@ -48,16 +48,6 @@ final class ConfigTest extends TestCase
         ]);
     }
 
-    public function test4()
-    {
-        $this->expectException(Exception\DomainException::class);
-        Config\Config::validate([
-            'test' => [
-                'test' => '949Mj3QjfN8NMWKDy6ZMeAgU7T2LHPv',
-            ],
-        ]);
-    }
-
     public function test5()
     {
         $this->expectException(Exception\DomainException::class);
