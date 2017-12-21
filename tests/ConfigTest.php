@@ -25,5 +25,4 @@ final class ConfigTest extends TestCase
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate(['hello' => 'world']);
     }
-  
 }
