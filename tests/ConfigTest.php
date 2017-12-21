@@ -48,7 +48,7 @@ final class ConfigTest extends TestCase
         ]);
     }
 
-    public function test3()
+    public function test4()
     {
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate([
@@ -58,7 +58,7 @@ final class ConfigTest extends TestCase
         ]);
     }
 
-    public function test3()
+    public function test5()
     {
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate([
@@ -68,7 +68,7 @@ final class ConfigTest extends TestCase
         ]);
     }
 
-    public function test4()
+    public function test6()
     {
         Env::clearConfig();
         $this->assertTrue(Config\Config::validate([
@@ -78,7 +78,7 @@ final class ConfigTest extends TestCase
         ]));
     }
 
-    public function test5()
+    public function test7()
     {
         Env::clearConfig();
     }
