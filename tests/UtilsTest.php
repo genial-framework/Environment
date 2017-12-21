@@ -16,8 +16,8 @@ namespace Genial\Env;
 use PHPUnit\Framework\TestCase;
 
 /**
-    * EnvTest.
-    */
+ * EnvTest.
+ */
 final class UtilsTest extends TestCase
 {
     public function test()
