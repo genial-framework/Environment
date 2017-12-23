@@ -21,7 +21,7 @@ $defaultConfig = [
     'application' => [
         'APP_SECRET_KEY' => null,
         'APP_NAME'       => 'Genial',
-        'DEBUG'          => false,
+        'DEBUG'          => true,
         'LOG'            => true,
     ],
     'server' => [
