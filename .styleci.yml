@@ -1,5 +1,1 @@
-preset: laravel
-finder:
-    exclude:
-        - "docs"
-        - "vendor"
+preset: psr2
