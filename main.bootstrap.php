@@ -23,30 +23,7 @@ $defaultConfig = [
         'APP_NAME'       => 'Genial',
         'DEBUG'          => true,
         'LOG'            => true,
-    ],
-    'server' => [
-        'FORCE_HTTPS' => false,
-    ],
-    'session' => [
-        'SESSION_NAME'    => 'Genial',
-        'SESSION_ENCRYPT' => true,
-        'SESSION_ENCODE'  => true,
-    ],
-    'cookie' => [
-        'COOKIE_LIFETIME'  => 0,
-        'COOKIE_PATH'      => '/',
-        'COOKIE_DOMAIN'    => ini_get('session.cookie_domain'),
-        'COOKIE_HTTP_ONLY' => true,
-    ],
-    'database' => [
-        'DB_HOST' => null,
-        'DB_USER' => null,
-        'DB_PASS' => null,
-        'DB_NAME' => null,
-    ],
-    'route' => [
-        'ROUTING_ENABLED' => false,
-    ],
+    ]
 ];
 
 /*
