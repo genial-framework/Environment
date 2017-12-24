@@ -21,6 +21,14 @@ use Genial\Env\Config\Config;
 class Utils
 {
     /**
+     * @var array|[SigMethods] $oAuthSignatureMethods The avaliable signature methods for OAuth authorisation.
+     */
+    public static $oAuthSignatureMethods = [
+        OAUTH_SIG_METHOD_RSASHA1,
+        OAUTH_SIG_METHOD_HMACSHA1,
+        OAUTH_SIG_METHOD_HMACSHA256
+    ];
+    /**
      * validConfigArray().
      *
      * @param array|null $config The config array.
