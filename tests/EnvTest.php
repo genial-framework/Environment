@@ -88,6 +88,6 @@ final class EnvTest extends TestCase
 
     public function test10()
     {
-        $this->assertTrue(! Env::clearConfig());
+        $this->assertTrue(!Env::clearConfig());
     }
 }

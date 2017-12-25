@@ -60,7 +60,7 @@ class Env
                 __METHOD__
             ));
         }
-        if (! self::$config) {
+        if (!self::$config) {
             throw new Exception\RuntimeException(sprintf(
                 '`%s` the `self::$config` is not set.',
                 __METHOD__
@@ -70,14 +70,15 @@ class Env
         }
         if (isset($env[$section])) {
             foreach ($env[$section] as $nVariable => $value) {
-                if (! is_null($variable) && $nVariable == strtoupper($variable)) {
+                if (!is_null($variable) && $nVariable == strtoupper($variable)) {
                     return $value;
                 }
-                if (! $variable) {
+                if (!$variable) {
                     goto doReturn;
                 }
             }
         }
+
         throw new Exception\UnderflowException(sprintf(
             '`%s` The request section name is not in the configuration array.',
             __METHOD__
@@ -99,7 +100,7 @@ class Env
      */
     public static function setConfig($config = [])
     {
-        if (! is_array($config)) {
+        if (!is_array($config)) {
             throw new Exception\InvalidArgumentException(sprintf(
                 '`%s` The `$config` variable has an invalid data type.',
                 __METHOD__

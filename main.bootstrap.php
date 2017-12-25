@@ -23,7 +23,7 @@ $defaultConfig = [
         'APP_NAME'       => 'Genial',
         'DEBUG'          => true,
         'LOG'            => true,
-    ]
+    ],
 ];
 
 /*
