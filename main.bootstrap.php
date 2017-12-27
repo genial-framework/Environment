@@ -6,17 +6,14 @@
  * @author    Genial Contributors <https://github.com/orgs/Genial-Framework/people>
  *
  * @link      <https://github.com/Genial-Framework/Env> for the canonical source repository.
- *
  * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
  * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
  */
+
 use Genial\Env\Env;
 
 define('ENV_ADAPTER_ACTIVE', true);
 
-/**
- * Default configuration.
- */
 $defaultConfig = [
     'application' => [
         'APP_SECRET_KEY' => null,
@@ -26,25 +23,18 @@ $defaultConfig = [
     ],
 ];
 
-/*
- * Check to see if a configuration file exists.
- */
-if (defined('APP_ROOT') && file_exists(APP_ROOT.'/.env.ini')) {
+if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
+{
     $env = parse_ini_file(APP_ROOT.'/.env.ini', true, INI_SCANNER_RAW);
     Env::setConfig($env);
-} else {
+} else
+{
     Env::setConfig($defaultConfig);
 }
 
-/*
- * Unset all variables.
- */
 unset($env);
 unset($defaultConfig);
 
-/**
- * Create an easy access function for configuration variables.
- */
 function env($section, $variable = null, $defRetVal = '')
 {
     try {
@@ -54,9 +44,6 @@ function env($section, $variable = null, $defRetVal = '')
     }
 }
 
-/**
- * Create an array depth function.
- */
 function array_depth(array $array)
 {
     $max_depth = 1;
@@ -68,6 +55,5 @@ function array_depth(array $array)
             }
         }
     }
-
     return $max_depth;
 }
