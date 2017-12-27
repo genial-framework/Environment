@@ -19,6 +19,7 @@ use Genial\Env\Config\Config;
  */
 class Utils
 {
+    
     /**
      * validConfigArray().
      *
@@ -26,17 +27,18 @@ class Utils
      *
      * @throws UnderflowException If the array is empty.
      *
-     * @return bool True if the array is valid and false if otherwise.
+     * @return bool|true True if the configuration array is valid.
      */
     public static function validConfigArray(array $config = [])
     {
-        if (empty($config)) {
+        if (empty($config))
+        {
             throw new Exception\UnderflowException(sprintf(
                 '`%s` The `$config` array is empty.',
                 __METHOD__
             ));
         }
-
         return Config::validate($config);
     }
+    
 }
