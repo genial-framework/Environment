@@ -23,6 +23,8 @@ class Utils
     /**
      * validConfigArray().
      *
+     * Validate the configuration array.
+     *
      * @param array|null $config The config array.
      *
      * @throws UnderflowException If the array is empty.
