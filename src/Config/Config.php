@@ -29,6 +29,7 @@ class Config extends Env
      * @param array $xconfig The configuration array.
      *
      * @throws DomainException          If $xconfig does not have a depth of 2.
+     * @throws UnexpectedValueException If a section is not the start of an array.
      * @throws UnexpectedValueException If the variable names are not capital letters.
      * @throws LengthException          If the variable name or value is too long.
      *
@@ -45,6 +46,13 @@ class Config extends Env
         }
         foreach ($xconfig as $array)
         {
+            if (!is_array($array))
+            {
+                throw new Exception\UnexpectedValueException(sprintf(
+                    '`%s` A section is not the start of an array.',
+                    __METHOD__
+                ));
+            }
             foreach ($array as $var => $val)
             {
                 if (!ctype_upper(str_replace('_', '', $var)))
