@@ -63,6 +63,7 @@ class Config extends Env
                 }
             }
         }
+        self::clearConfig();
         self::$config = $xconfig;
         return true;
     }
