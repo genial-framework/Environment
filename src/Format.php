@@ -12,6 +12,8 @@
 
 namespace Genial\Env;
 
+use Error;
+
 /**
  * Format.
  */
@@ -19,23 +21,31 @@ class Format implements FormatInterface
 {
   
     /**
-     * @var array $config The configuration array
-     */
-    protected static $config;  
-  
-    /**
      * __invoke().
      *
      * Set the configuration.
      *
-     * @param array $xconfig The configuration array.
+     * @param mixed The value to format.
      *
-     * @return bool|true If the configuration was set.
+     * @return string The formatted value.
      */
-    public function __invoke($xconfig)
+    public function __invoke($xvalue)
     {
-        self::$config = $this->create($xconfig);
-        return true;
+        try
+        {
+            return floatval($xvalue);
+        } catch (Error $e)
+        {
+            if ($xvalue == 'true' || $xvalue == 'false') 
+            {
+                return boolval($xvalue);
+            }
+            if ($xvalue == 'null')
+            {
+                return null;
+            }
+            return strval($xvalue);
+        }
     }
   
 }
