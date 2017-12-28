@@ -34,7 +34,7 @@ class Format implements FormatInterface
      */
     public function __invoke($xconfig)
     {
-        self::$config = $xconfig;
+        self::$config = $this->create($xconfig);
         return true;
     }
   
