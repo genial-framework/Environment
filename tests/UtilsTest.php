@@ -20,13 +20,28 @@ use PHPUnit\Framework\TestCase;
  */
 final class UtilsTest extends TestCase
 {
-    public function test()
+    
+    /**
+     * testValidConfigArray().
+     *
+     * Test the the requested config.
+     *
+     * @return void
+     */
+    public function testValidConfigArray()
     {
         $this->expectException(Exception\UnderflowException::class);
         Utils::validConfigArray();
     }
 
-    public function test2()
+    /**
+     * testValidConfigArray2().
+     *
+     * Test the the requested config.
+     *
+     * @return void
+     */
+    public function testValidConfigArray2()
     {
         $this->assertTrue(Utils::validConfigArray([
             'test' => [
@@ -35,8 +50,16 @@ final class UtilsTest extends TestCase
         ]));
     }
 
+    /**
+     * __destruct().
+     *
+     * Clear the current config.
+     *
+     * @return void
+     */
     public function __destruct()
     {
         Env::clearConfig();
     }
+    
 }
