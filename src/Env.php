@@ -15,7 +15,7 @@ namespace Genial\Env;
 /**
  * Env.
  */
-class Env extends Format
+class Env
 {
     
     /**
