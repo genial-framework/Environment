@@ -6,7 +6,6 @@
  * @author    Genial Contributors <https://github.com/orgs/Genial-Framework/people>
  *
  * @link      <https://github.com/Genial-Framework/Env> for the canonical source repository.
- *
  * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
  * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
  */
@@ -20,6 +19,10 @@ use PHPUnit\Framework\TestCase;
  */
 final class EnvTest extends TestCase
 {
+    
+    /**
+     * @var array $exampleConfig An example config used for testing
+     */
     private $exampleConfig = [
         'app' => [
             'APP_NAME' => 'Genial',
@@ -29,65 +32,143 @@ final class EnvTest extends TestCase
         ],
     ];
 
-    public function test()
+    /**
+     * testGetConfig().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig()
     {
         $this->expectException(Exception\RuntimeException::class);
         Env::clearConfig();
         Env::getConfig('app');
     }
 
-    public function test1()
+    /**
+     * testGetConfig2().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig2()
     {
         $this->assertTrue(Env::setConfig($this->exampleConfig));
     }
 
-    public function test2()
+    /**
+     * testGetConfig3().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig3()
     {
         $this->assertEquals('Genial', Env::getConfig('app', 'app_name'));
     }
 
-    public function test3()
+    /**
+     * testSetConfig().
+     *
+     * Test the set config function.
+     *
+     * @return void
+     */
+    public function testSetConfig()
     {
         $this->expectException(Exception\InvalidArgumentException::class);
         Env::setConfig('fail');
     }
 
-    public function test4()
+    /**
+     * testGetConfig4().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig4()
     {
         $this->expectException(Exception\BadMethodCallException::class);
         Env::getConfig();
     }
 
-    public function test5()
+    /**
+     * testGetConfig5().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig5()
     {
         $this->expectException(Exception\UnexpectedValueException::class);
         Env::getConfig('');
     }
 
-    public function test6()
+    /**
+     * testGetConfig6().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig6()
     {
         $this->assertEquals(['APP_NAME' => 'Genial'], Env::getConfig('app'));
     }
 
-    public function test7()
+    /**
+     * testGetConfig7().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig7()
     {
         $this->assertEquals('world', Env::getConfig('randomSection', 'hello'));
     }
 
-    public function test8()
+    /**
+     * testGetConfig8().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig8()
     {
         $this->expectException(Exception\UnderflowException::class);
         Env::getConfig('muzzle');
     }
 
-    public function test9()
+    /**
+     * testGetConfig9().
+     *
+     * Test the get config function.
+     *
+     * @return void
+     */
+    public function testGetConfig9()
     {
         $this->expectException(Exception\LengthException::class);
         Env::getConfig('\'*w[+,8H&F:LE}^F8s;2H{+S`VG$6\'sRWbQJRsZ%A>p%3+^hWFZ4egu;LHuZaZwet]<P~WSG3("m/\'9kS+`dcL=&acT2qRrEz:,C_}=$;+.a)bRj"^[4(7()*Vgg4^Ck.3j4F_yJzHV;g27n4XWL`[m^(A:%^@b(DMm29u/t!~4,&?F2\'E89>8Kv4!P-p?rBTnfP(LaTkmE"7Kf~\s)Na+BM#`3}ra,WSr:4]}/,sMCT*Am9:absD=v)m]8MQ.P!');
     }
 
-    public function test10()
+    /**
+     * testClearConfig().
+     *
+     * Test the clear config function.
+     *
+     * @return void
+     */
+    public function testClearConfig()
     {
         $this->assertTrue(!Env::clearConfig());
     }
+    
 }
