@@ -6,7 +6,6 @@
  * @author    Genial Contributors <https://github.com/orgs/Genial-Framework/people>
  *
  * @link      <https://github.com/Genial-Framework/Env> for the canonical source repository.
- *
  * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
  * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
  */
@@ -20,23 +19,65 @@ use PHPUnit\Framework\TestCase;
  */
 final class ConfigTest extends TestCase
 {
-    public function test()
+    
+    /**
+     * testValidate().
+     *
+     * Test the validate function.
+     *
+     * @return void
+     */
+    public function testValidate()
     {
         $this->expectException(Exception\DomainException::class);
-        Config\Config::validate(['hello' => 'world']);
+        Config\Config::validate([
+            'hello' => 'world'
+        ]);
     }
 
-    public function test2()
+    /**
+     * testValidate2().
+     *
+     * Test the validate function.
+     *
+     * @return void
+     */
+    public function testValidate2()
     {
         $this->expectException(Exception\UnexpectedValueException::class);
         Config\Config::validate([
             'test' => [
-                'test' => 'config',
+                'TEST' => 'config',
             ],
+            'hello' => 'world'
         ]);
     }
 
-    public function test3()
+    /**
+     * testValidate3().
+     *
+     * Test the validate function.
+     *
+     * @return void
+     */
+    public function testValidate3()
+    {
+        $this->expectException(UnexpectedValueException::class);
+        Config\Config::validate([
+            'test' => [
+                'hello' => 'bar',
+            ],
+        ]);
+    }
+    
+    /**
+     * testValidate4().
+     *
+     * Test the validate function.
+     *
+     * @return void
+     */
+    public function testValidate4()
     {
         $this->expectException(Exception\DomainException::class);
         Config\Config::validate([
@@ -48,7 +89,14 @@ final class ConfigTest extends TestCase
         ]);
     }
 
-    public function test5()
+    /**
+     * testValidate5().
+     *
+     * Test the validate function.
+     *
+     * @return void
+     */
+    public function testValidate5()
     {
         $this->expectException(Exception\LengthException::class);
         Config\Config::validate([
@@ -58,7 +106,14 @@ final class ConfigTest extends TestCase
         ]);
     }
 
-    public function test6()
+    /**
+     * testValidate6().
+     *
+     * Test the validate function.
+     *
+     * @return void
+     */
+    public function testValidate6()
     {
         Env::clearConfig();
         $this->assertTrue(Config\Config::validate([
@@ -68,6 +123,13 @@ final class ConfigTest extends TestCase
         ]));
     }
 
+    /**
+     * __destruct().
+     *
+     * Clear the config
+     *
+     * @return void
+     */
     public function __destruct()
     {
         Env::clearConfig();
