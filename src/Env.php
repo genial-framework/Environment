@@ -19,25 +19,42 @@ class Env extends Format
 {
     
     /**
-     * @var array|null The configuration array
+     * @var object $obj The formatting object.
+     */
+    private $obj;
+    
+    /**
+     * @var array|null $config The configuration array.
      */
     protected static $config = null;
 
     /**
+     * __construct().
+     *
+     * Set the formatting object.
+     *
+     * @return void.
+     */
+    function __construct()
+    {
+        $this->obj = new Format;    
+    }
+    
+    /**
      * getConfig().
      *
-     * Get the current configuration
+     * Get the current configuration.
      *
-     * @param string|null $section  The configuration section to access
-     * @param string|null $variable The configuration variable name to access
+     * @param string|null $section  The configuration section to access.
+     * @param string|null $variable The configuration variable name to access.
      *
-     * @throws BadMethodCallException   If the $section argument is missing
-     * @throws UnexpectedValueException If the $section argument is empty
-     * @throws OverflowException        If the $section name does not exist
-     * @throws RuntimeException         If there is no configuration array set
-     * @throws LengthException          If the request vriables are too long
+     * @throws BadMethodCallException   If the $section argument is missing.
+     * @throws UnexpectedValueException If the $section argument is empty.
+     * @throws OverflowException        If the $section name does not exist.
+     * @throws RuntimeException         If there is no configuration array set.
+     * @throws LengthException          If the request vriables are too long.
      *
-     * @return array Return the configuration array based on section and/or a variable value
+     * @return array Return the configuration array based on section and/or a variable value.
      */
     public static function getConfig(string $section = null, string $variable = null)
     {
@@ -79,7 +96,7 @@ class Env extends Format
             {
                 if (!is_null($variable) && $nVariable == strtoupper($variable))
                 {
-                    return $value;
+                    return $this->obj($value);
                 }
                 if (!$variable)
                 {
