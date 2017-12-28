@@ -62,7 +62,7 @@ final class ConfigTest extends TestCase
      */
     public function testValidate3()
     {
-        $this->expectException(UnexpectedValueException::class);
+        $this->expectException(Exception\UnexpectedValueException::class);
         Config\Config::validate([
             'test' => [
                 'hello' => 'bar',
