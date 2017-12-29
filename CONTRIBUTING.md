@@ -7,4 +7,4 @@ I am glad people like you are looking at the contibuting guidelines becuase we n
   https://github.com/Genial-Framework/Env/blob/master/commentBlock
 - No empty lines inside global functions including class functions
 - Empty line before and after each function inside classes
-- 
+- Put the bracket on a new line when starting a `class`, `function`, `trait`, `interface`, `if`, etc
