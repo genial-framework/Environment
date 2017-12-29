@@ -29,7 +29,7 @@ try
 
 }
 ```
-- Do not put the php ending tag at the end of the file.
+- Do not put the php ending tag at the end of the files.
 ## Consclusion
 If you follow the coding standard you should be fine, when post a pull request please explain what the pull request will do and how it will help.
 
