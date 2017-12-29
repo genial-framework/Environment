@@ -5,3 +5,6 @@ I am glad people like you are looking at the contibuting guidelines becuase we n
 - The comment block header on all files
   
   <https://github.com/Genial-Framework/Env/blob/master/commentBlock>
+- No empty lines inside global functions including class functions
+- Empty line before and after each function inside classes
+- 
