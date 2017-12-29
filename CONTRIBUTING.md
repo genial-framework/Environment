@@ -8,3 +8,24 @@ I am glad people like you are looking at the contibuting guidelines becuase we n
 - No empty lines inside global functions including class functions
 - Empty line before and after each function inside classes
 - Put the bracket on a new line when starting a `class`, `function`, `trait`, `interface`, `if`, etc
+- When doing `else`, `elseif`, `catch`, or any of that needs to be on the same line as the statement and the ending bracket needs to be on a new line
+
+```
+if () 
+{
+
+} else
+{
+
+}
+```
+
+```
+try
+{
+
+} catch ()
+{
+
+}
+```
