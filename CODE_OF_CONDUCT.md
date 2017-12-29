@@ -1,4 +1,5 @@
 # Contributor Covenant Code of Conduct
+*** APPLIES TO ALL REPOSITORIES ***
 
 ## Our Pledge
 
