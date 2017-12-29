@@ -19,26 +19,9 @@ class Env
 {
     
     /**
-     * @var object $obj The formatting object.
-     */
-    private $obj;
-    
-    /**
      * @var array|null $config The configuration array.
      */
     protected static $config = null;
-
-    /**
-     * __construct().
-     *
-     * Set the formatting object.
-     *
-     * @return void.
-     */
-    function __construct()
-    {
-        $this->obj = new Format;    
-    }
     
     /**
      * getConfig().
@@ -96,7 +79,7 @@ class Env
             {
                 if (!is_null($variable) && $nVariable == strtoupper($variable))
                 {
-                    return $this->obj($value);
+                    return $value;
                 }
                 if (!$variable)
                 {
