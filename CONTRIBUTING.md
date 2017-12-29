@@ -29,4 +29,6 @@ try
 
 }
 ```
-- Do not put the `?>` ending tag at the end of the file.
+- Do not put the php ending tag at the end of the file.
+## Consclusion
+If you follow the coding standard youshould be fine, when post a pull request please explain what the pull request will do and how it will help. Keep in mind i am looking for dedicated contributors to be a part of a custom team that will manage certain repositories which will give you push and pull request to make the developement of Genial Framework much faster. So if you contribute and help out and want to join the team just email me at nenglish0820@outlook.com and we will see what we can do. 
