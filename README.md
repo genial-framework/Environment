@@ -1,4 +1,4 @@
-[![GitHub contributors](https://img.shields.io/github/contributors/Genial-Framework/Env.svg?style=flat-square)](https://github.com/Genial-Framework/Env/graphs/contributors) [![Packagist](https://img.shields.io/packagist/dd/genial-framework/env.svg?style=flat-square)](https://github.com/Genial-Framework/Env) [![Travis](https://img.shields.io/travis/Genial-Framework/Env.svg?style=flat-square)](https://travis-ci.org/Genial-Framework/Env) [![Coveralls github branch](https://img.shields.io/coveralls/github/Genial-Framework/Env/master.svg?style=flat-square)](https://coveralls.io/github/Genial-Framework/Env?branch=master)
+[![Travis](https://img.shields.io/travis/Genial-Framework/Env.svg?style=flat-square)](https://travis-ci.org/Genial-Framework/Env) [![Coveralls github branch](https://img.shields.io/coveralls/github/Genial-Framework/Env/master.svg?style=flat-square)](https://coveralls.io/github/Genial-Framework/Env?branch=master)
 
 -------
 Environment configuration file adapter for Genial Framework.
