@@ -19,6 +19,7 @@
         <whitelist>
             <directory>./src</directory>
             <exclude>
+                <directory>./docs</directory>
                 <directory>./vendor</directory>
                 <directory>./tests</directory>
             </exclude>
