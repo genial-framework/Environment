@@ -6,5 +6,6 @@ composer.phar
 /tests/
 README.md
 LICENSE.md
+CODE_OF_CONDUCT.md
 .coveralls.yml
 phpunit.xml
