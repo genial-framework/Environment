@@ -17,3 +17,11 @@ require APP_ROOT . '/vendor/autoload.php';
 // At this point you are all set
 
 ```
+## Usage
+On every file just require the `bootstrap.php` to each file. The `env()` function has three arguments. The first argument is the name of the section you want to access. The second one is the name of the configuration variable inside the section you want to access. The last argument is used as a default return value if the variable is not found.
+
+> ###NOTE
+>
+> 
+>
+>
