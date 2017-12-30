@@ -13,9 +13,5 @@ We suggest you use composer as it is quicker and easier. You can direct download
 ## Links
 - File issues at https://github.com/Genial-Framework/Env/issues
 - Documentation is at https://github.com/Genial-Framework/Env/tree/master/docs/book
-- Contributing guidelines is at https://github.com/Genial-Framework/Env/blob/master/CONTRIBUTING.md
-- Code of conduct is at https://github.com/Genial-Framework/Env/blob/master/CODE_OF_CONDUCT.md
-- Issue template is at https://github.com/Genial-Framework/Env/blob/master/ISSUE_TEMPLATE.md
-- Pull request template is at https://github.com/Genial-Framework/Env/blob/master/PULL_REQUEST_TEMPLATE.md
 - License is at https://github.com/Genial-Framework/Env/blob/master/LICENSE
 
