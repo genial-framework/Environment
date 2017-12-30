@@ -59,3 +59,16 @@ var_dump(is_bool($appName));
 ```
 Now that will output `true` becuase we converted the string value into a bool value.
 
+You can only get the section if you want by not including the last two arguments. If the section does not exist it will throw a `UnderflowException` exception and return null from the `env()` function.
+
+`test.php`
+```php
+require __DIR__ . '/bootstrap.php';
+
+$appArray = env('application');
+
+var_dump($appArray);
+
+```
+
+
