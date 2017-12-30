@@ -6,5 +6,14 @@ Before you start you need to download/install composer so you can install the en
 
 `bootstrap.php`
 ```
+<?php
+
+// Needed so the `.env.ini file` is callable
+define('APP_ROOT', __DIR__);
+
+// Composer autoload
+require APP_ROOT . '/vendor/autoload.php';
+
+// At this point you are all set
 
 ```
