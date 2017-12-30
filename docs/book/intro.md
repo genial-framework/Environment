@@ -45,4 +45,17 @@ $appName = env('application', 'app_name', '');
 echo $appName;
 
 ```
-The above exaple will output `Genial` the second argument is not case-sensitive so lowercase characters.
+The above exaple will output `Genial` the second argument is not case-sensitive so lowercase characters. If you want the data type to be bool you would do the example below.
+
+`test.php`
+```php
+
+require __DIR__ . '/bootstrap.php';
+
+$appName = (bool) env('application', 'debug', false);
+
+var_dump(is_bool($appName));
+
+```
+Now that will output `true` becuase we converted the string value into a bool value.
+
