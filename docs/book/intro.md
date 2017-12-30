@@ -40,6 +40,9 @@ LOG           =true
 
 require __DIR__ . '/bootstrap.php';
 
-$appName
+$appName = env('application', 'app_name', '');
+
+echo $appName;
 
 ```
+The above exaple will output `Genial` the second argument is not case-sensitive so lowercase characters.
