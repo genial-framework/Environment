@@ -6,10 +6,5 @@ composer.phar
 /tests/
 README.md
 LICENSE.md
-PULL_REQUEST_TEMPLATE.md
-ISSUE_TEMPLATE.md
-CODE_OF_CONDUCT.md
-CONTRIBUTING.md
 .coveralls.yml
 phpunit.xml
-commentBlock
