@@ -72,6 +72,5 @@ var_dump($appArray);
 ```
 ## Links
 - https://github.com/Genial-Framework/Env/blob/master/docs/book/env.md
-- https://github.com/Genial-Framework/Env/blob/master/docs/book/config.md
 
 
