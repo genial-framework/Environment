@@ -4,6 +4,8 @@ The env configuration file adapter is used to convert the `.env.ini` configurati
 ## Before You Start
 Before you start you need to download/install composer so you can install the env configuration file adapter. After that create the `.env.ini` and the `bootstrap.php` file in the same directory as the `composer.json` and `composer.lock` files. In your `bootstrap.php` file you need to call the autoloader.
 
+> If you direct download the package you need to create your own autoloader
+
 `bootstrap.php`
 ```php
 <?php
