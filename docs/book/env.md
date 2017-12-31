@@ -89,5 +89,4 @@ EnvAdapter::clearConfig();
 
 ```
 ## Links
-- https://github.com/Genial-Framework/Env/blob/master/docs/book/config.md
 - https://github.com/Genial-Framework/Env/blob/master/docs/book/intro.md
