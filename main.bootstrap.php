@@ -16,10 +16,15 @@ define('ENV_ADAPTER_ACTIVE', true);
 
 $defaultConfig = [
     'application' => [
-        'APP_SECRET_KEY' => null,
-        'APP_NAME'       => 'Genial',
-        'DEBUG'          => false,
-        'LOG'            => true,
+        'APP_SECRET_KEY'       => null,
+        'APP_NAME'             => 'Genial',
+        'DEBUG'                => false,
+        'LOG'                  => true,
+    ],
+    'session' => [
+        'SESSION_NAME'         => 'GenialSession',
+        'SESSION_SAVE_HANDLER' => 'files',
+        'SESSION_ENCRYPT'      => true,
     ],
 ];
 
