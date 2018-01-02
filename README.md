@@ -8,7 +8,10 @@ Environment configuration file adapter for Genial Framework.
 ```
 composer require genial-framework/env
 ```
-> Composer is a must have when using Gennial Framework.
+
+> Composer is not required but it is recommended.
+
+If you wish to direct download this package you must create an autoloader to load all of the files.
 
 ## Documentation
 > The documentation has not been created yet.
