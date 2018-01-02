@@ -80,19 +80,19 @@ class Formatter extends Key
                 }
                 foreach ($section as $variable => $value)
                 {
-                    if (is_null($value) || $value == 'null')
+                    if ($value == 'null')
                     {
                         $config[$section][$variable] = null;
-                    } elseif (strval($value) == 'true')
+                    } elseif ($value == 'true')
                     {
                         $config[$section][$variable] = true;
-                    } elseif (strval($value) == 'false')
+                    } elseif ($value == 'false')
                     {
                         $config[$section][$variable] = false;
-                    } elseif (strval($value) == '1')
+                    } elseif ($value == '1')
                     {
                         $config[$section][$variable] = true;
-                    } elseif (strval($value) == '0')
+                    } elseif ($value == '0')
                     {
                         $config[$section][$variable] = false;
                     } else
