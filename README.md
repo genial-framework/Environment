@@ -14,7 +14,10 @@ We suggest you use composer as it is quicker and easier. You can direct download
 - PHP > 7.0
 
 ## Contributing
-If you are looking to contribute just fork the repo and make changes you wish should be changed. Then post a new pull request and it will be reviewed and if it is all good it will be pushed to the master branch. 
+If you are looking to contribute just fork the repo and make changes you wish should be changed. Then post a new pull request and it will be reviewed and if it is all good it will be pushed to the master branch.
+
+## Documentation
+> The documentation has not been created yet as Genial Framework is not close to being finished.
 
 ## Links
 > We will make a website for Genial Framework and it will be public when the first release of the entire framework is finished.
