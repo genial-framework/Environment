@@ -64,7 +64,7 @@ class Formatter extends Key
                     $xconfig['application']['debug'] = false;
                 } else
                 {
-                    $xconfig['application']['debug'] = (bool) $config['application']['debug']
+                    $xconfig['application']['debug'] = (bool) $config['application']['debug'];
                 }
             }
             if (isset($config['application']['log']))
@@ -74,7 +74,7 @@ class Formatter extends Key
                     $xconfig['application']['log'] = false;
                 } else
                 {
-                    $xconfig['application']['log'] = (bool) $config['application']['log']
+                    $xconfig['application']['log'] = (bool) $config['application']['log'];
                 }
             }
             $config['application'] = $xconfig;
