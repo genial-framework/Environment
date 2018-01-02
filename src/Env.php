@@ -84,7 +84,7 @@ class Env
             {
                 if (!is_null($variable) && $nVariable == strtoupper($variable))
                 {
-                    return strval($value);
+                    return $value;
                 }
                 if (!$variable || is_null($variable))
                 {
