@@ -16,10 +16,10 @@ define('ENV_ADAPTER_ACTIVE', true);
 
 $defaultConfig = [
     'application' => [
-        'APP_SECRET_KEY'       => null,
-        'APP_NAME'             => 'Genial',
-        'DEBUG'                => false,
-        'LOG'                  => true,
+        'APP_SECRET_KEY' => null,
+        'APP_NAME'       => 'Genial',
+        'DEBUG'          => false,
+        'LOG'            => true,
     ],
 ];
 
