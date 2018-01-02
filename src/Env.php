@@ -120,7 +120,7 @@ class Env
                 __METHOD__
             ));
         }
-        return Utils::validConfigArray($config, ENV_EXECUTE_SET_CONFIG);
+        return Utils::validConfigArray($config, self::ENV_EXECUTE_SET_CONFIG);
     }
 
     /**
