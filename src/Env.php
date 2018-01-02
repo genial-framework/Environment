@@ -1,44 +1,8 @@
 <?php
-/**
- * Genial Framework.
- *
- * @author    Nicholas English <https://github.com/Nenglish7>
- * @author    Genial Contributors <https://github.com/orgs/Genial-Framework/people>
- *
- * @link      <https://github.com/Genial-Framework/Env> for the canonical source repository.
- * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
- * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
- */
-
 namespace Genial\Env;
-
-/**
- * Env.
- */
 class Env
 {
-    
-    /**
-     * @var array|null $config The configuration array.
-     */
     protected static $config = null;
-    
-    /**
-     * getConfig().
-     *
-     * Get the current configuration.
-     *
-     * @param string|null $section  The configuration section to access.
-     * @param string|null $variable The configuration variable name to access.
-     *
-     * @throws BadMethodCallException   If the $section argument is missing.
-     * @throws UnexpectedValueException If the $section argument is empty.
-     * @throws OverflowException        If the $section name does not exist.
-     * @throws RuntimeException         If there is no configuration array set.
-     * @throws LengthException          If the request vriables are too long.
-     *
-     * @return array Return the configuration array based on section and/or a variable value.
-     */
     public static function getConfig(string $section = null, string $variable = null)
     {
         if (is_null($section))
@@ -94,18 +58,6 @@ class Env
         doReturn:
         return $env[$section];
     }
-
-    /**
-     * setConfig().
-     *
-     * Set the current configuration
-     *
-     * @param array|[] $config The configuration array to use
-     *
-     * @throws InvalidArgumentException If $config is not an array
-     *
-     * @return bool|true True if the configuration array is set.
-     */
     public static function setConfig($config = [])
     {
         if (!is_array($config))
@@ -117,18 +69,9 @@ class Env
         }
         return Utils::validConfigArray($config);
     }
-
-    /**
-     * clearConfig().
-     *
-     * Clear the current configuration
-     *
-     * @return void
-     */
     public static function clearConfig()
     {
         self::$config = false;
         return false;
     }
-    
 }
