@@ -96,19 +96,6 @@ final class KeyTest extends TestCase
         $key = new Key();
         $this->assertTrue(mb_substr($key->generateKey(), 0, 9) === '[GENIAL]@');
     }
-  
-    /**
-     * testGenerateKey2().
-     *
-     * Test the key generation function.
-     *
-     * @return void.
-     */
-    public function testGenerateKey2()
-    {
-        $key = new Key();
-        $this->assertTrue(mb_substr($key->generateKey(), 0, 9) === '[GENIAL]@');
-    }
                           
     /**
      * testGenerateRandomString().
@@ -117,7 +104,7 @@ final class KeyTest extends TestCase
      *
      * @return void.
      */
-    public function testGenerateRandomString()
+    public function testGenerateKey2()
     {
         $this->expectException(Exception\LengthException::class);
         $key = new Key();
