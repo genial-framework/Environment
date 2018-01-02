@@ -21,3 +21,4 @@ If you wish to direct download this package you must create an autoloader to loa
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Env/issues
+- License is at https://github.com/Genial-Framework/Env/blob/master/LICENSE
