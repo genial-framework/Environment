@@ -29,7 +29,8 @@ final class FormatterTest extends TestCase
      */
     public function testInitialize()
     {
-        $this->assertTrue(is_array(Formatter::initialize([
+        $formatter = new Formatter();
+        $this->assertTrue(is_array($formatter->initialize([
             'application' => [ 
             ],
         ])));
@@ -44,7 +45,8 @@ final class FormatterTest extends TestCase
      */
     public function testInitialize2()
     {
-        $this->assertTrue(is_array(Formatter::initialize([
+        $formatter = new Formatter();
+        $this->assertTrue(is_array($formatter->initialize([
             'application' => [
                 'APP_SECRET_KEY' => '[GENIAL]@%$-<:Ns3Z-3^rUc>YdF$',
                 'APP_NAME'       => 'Genial',
@@ -63,7 +65,8 @@ final class FormatterTest extends TestCase
      */
     public function testInitialize3()
     {
-        $this->assertTrue(is_array(Formatter::initialize([
+        $formatter = new Formatter();
+        $this->assertTrue(is_array($formatter->initialize([
             'application' => [
                 'APP_SECRET_KEY' => '[GENIAL]@%$-<:Ns3Z-3^rUc>YdF$',
                 'APP_NAME'       => 'Genial',
