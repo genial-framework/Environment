@@ -15,3 +15,9 @@ If you wish to direct download this package you must create an autoloader to loa
 
 ## Documentation
 > The documentation has not been created yet.
+
+## Contributing
+> The contributing guidelines have not been created yet.
+
+## Links
+> There are no links to show yet.
