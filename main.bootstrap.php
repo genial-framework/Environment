@@ -40,7 +40,7 @@ function env($section, $variable = null, $defRetVal = '')
     try {
         return Env::getConfig($section, $variable);
     } catch (\Genial\Env\Exception\UnderflowException $e) {
-        return $defRetVal;
+        return strval($defRetVal);
     }
 }
 
