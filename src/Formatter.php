@@ -18,4 +18,96 @@ namespace Genial\Env;
 class Formatter extends Key
 {
     
+    /**
+     * @const ENV_DONT_EXECUTE_SET_CONFIG Do not set the configuration array yet.
+     */
+    const ENV_DONT_EXECUTE_SET_CONFIG = 0;
+    
+    /**
+     * initialize().
+     *
+     * Format the confiiguration array.
+     *
+     * @param array|[] $config The configuration array.
+     *
+     * @return string Thee formatted configuration array.
+     */
+    public static function initialize(array $config = [])
+    {
+        if (Utils::validConfigArray($config, self::ENV_DONT_EXECUTE_SET_CONFIG))
+        {
+            $xconfig = [];
+            if (isset($config['application']['app_secret_key']))
+            {
+                if (strval($config['application']['app_secret_key']) == 'null' || strlen(strval($config['application']['app_secret_key'])) < 15)
+                {
+                    $xconfig['application']['app_secret_key'] = $this->generateKey();
+                } else
+                {
+                    $xconfig['application']['app_secret_key'] = strval($config['application']['app_secret_key']);
+                }
+            }
+            if (isset($config['application']['app_name']))
+            {
+                if (strval($config['application']['app_name']) == '')
+                {
+                    $xconfig['application']['app_name'] = strval($config['application']['app_name']);
+                } else
+                {
+                    $xconfig['application']['app_name'] = 'Genial';
+                }
+            }
+            if (isset($config['application']['debug']))
+            {
+                if (strval($config['application']['debug']) == '')
+                {
+                    $xconfig['application']['debug'] = false;
+                } else
+                {
+                    $xconfig['application']['debug'] = (bool) $config['application']['debug']
+                }
+            }
+            if (isset($config['application']['log']))
+            {
+                if (strval($config['application']['log']) == '')
+                {
+                    $xconfig['application']['log'] = false;
+                } else
+                {
+                    $xconfig['application']['log'] = (bool) $config['application']['log']
+                }
+            }
+            $config['application'] = $xconfig;
+            foreach ($config as $section)
+            {
+                if ($section == 'application')
+                {
+                    continue;
+                }
+                foreach ($section as $variable => $value)
+                {
+                    if (strval($value) == 'null')
+                    {
+                        $config[$section][$variable] = null;
+                    } elseif (strval($value) == 'true')
+                    {
+                        $config[$section][$variable] = true;
+                    } elseif (strval($value) == 'false')
+                    {
+                        $config[$section][$variable] = false;
+                    } elseif (strval($value) == '1')
+                    {
+                        $config[$section][$variable] = true;
+                    } elseif (strval($value) == '0')
+                    {
+                        $config[$section][$variable] = false;
+                    } else
+                    {
+                    }
+                }
+            }
+            return $config;
+        }
+    }
+        
 }
