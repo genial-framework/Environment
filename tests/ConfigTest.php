@@ -32,7 +32,7 @@ final class ConfigTest extends TestCase
         $this->expectException(Exception\DomainException::class);
         Config::validate([
             'hello' => 'world'
-        ]);
+        ], 1);
     }
 
     /**
@@ -50,7 +50,7 @@ final class ConfigTest extends TestCase
                 'TEST' => 'config',
             ],
             'hello' => 'world'
-        ]);
+        ], 1);
     }
 
     /**
@@ -67,7 +67,7 @@ final class ConfigTest extends TestCase
             'test' => [
                 'hello' => 'bar',
             ],
-        ]);
+        ], 1);
     }
     
     /**
@@ -86,7 +86,7 @@ final class ConfigTest extends TestCase
                     'FOO' => 'bar',
                 ],
             ],
-        ]);
+        ], 1);
     }
 
     /**
@@ -103,7 +103,7 @@ final class ConfigTest extends TestCase
             'test' => [
                 'WIUCHNUIWFCINQOWDIJNOIQJNWDOIJNCQIWNJDOICNJOIQWJNDCOIJNW' => 'foobar',
             ],
-        ]);
+        ], 1);
     }
 
     /**
@@ -120,7 +120,7 @@ final class ConfigTest extends TestCase
             'test' => [
                 'FOO' => 'bar',
             ],
-        ]));
+        ], 1));
     }
 
     /**
