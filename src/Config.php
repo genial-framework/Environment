@@ -24,6 +24,7 @@ class Config extends Env
      * Validate the configuration array.
      *
      * @param array $xconfig The configuration array.
+     * @param int $execute   Should the config class ececute the set config function.
      *
      * @throws DomainException          If $xconfig does not have a depth of 2.
      * @throws UnexpectedValueException If a section is not the start of an array.
@@ -32,7 +33,7 @@ class Config extends Env
      *
      * @return bool|true True if the configuration array is valid.
      */
-    public static function validate(array $xconfig)
+    public static function validate(array $xconfig, $execute)
     {
         if (array_depth($xconfig) != 2)
         {
@@ -68,8 +69,11 @@ class Config extends Env
                 }
             }
         }
-        self::clearConfig();
-        self::$config = $xconfig;
+        if ($execute !== Formatter::ENV_DONT_EXECUTE_SET_CONFIG)
+        {
+            self::clearConfig();
+            self::$config = $xconfig;
+        }
         return true;
     }
     
