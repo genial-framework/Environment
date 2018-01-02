@@ -11,7 +11,7 @@ composer require genial-framework/env
 
 > Composer is not required but it is recommended.
 
-If you wish to direct download this package you must create an autoloader to load all of the files.
+If you wish to direct download this package you must create an autoloader to load all of the files. Generally you can just install the whole framework using the installer to make things easy.
 
 ## Documentation
 > The documentation has not been created yet.
