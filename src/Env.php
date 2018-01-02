@@ -19,7 +19,7 @@ class Env
 {
     
     /**
-     * @const ENV_DONT_EXECUTE_SET_CONFIG Do not set the configuration array yet.
+     * @const ENV_DONT_EXECUTE_SET_CONFIG Set the configuration array yet.
      */
     const ENV_EXECUTE_SET_CONFIG = 1;  
     
