@@ -72,25 +72,29 @@ class Formatter extends Key
                 $xconfig['application']['LOG'] = false;   
             }
             unset($config['application']);
+            $arrayKeys = array_keys($config);
+            reset($config)
+            reset($arrayKeys);
             foreach ($config as $section)
             {
                 foreach ($section as $variable => $value)
                 {
                     if ($value == 'null')
                     {
-                        $config[$section][$variable] = null;
+                        $config[current($arrayKeys)][$variable] = null;
                     } elseif ($value == 'true')
                     {
-                        $config[$section][$variable] = true;
+                        $config[current($arrayKeys)][$variable] = true;
                     } elseif ($value == 'false')
                     {
-                        $config[$section][$variable] = false;
+                        $config[current($arrayKeys)][$variable] = false;
                     } elseif ($value == '1')
                     {
-                        $config[$section][$variable] = true;
+                        $config[current($arrayKeys)][$variable] = true;
+                        next($arrayKeys);
                     } elseif ($value == '0')
                     {
-                        $config[$section][$variable] = false;
+                        $config[current($arrayKeys)][$variable] = false;
                     } else
                     {
                     }
@@ -102,6 +106,7 @@ class Formatter extends Key
                         __METHOD__
                     ));
                 }
+                next($arrayKeys);
             }
             $config['application'] = $xconfig;
             return $config;
