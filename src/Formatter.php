@@ -77,6 +77,13 @@ class Formatter extends Key
             reset($arrayKeys);
             foreach ($config as $section)
             {
+                if (empty($section))
+                {
+                    throw new Exception\UnderflowException(sprintf(
+                        '`%s` There is an empty section.',
+                        __METHOD__
+                    ));
+                }
                 foreach ($section as $variable => $value)
                 {
                     if ($value == 'null')
@@ -97,15 +104,10 @@ class Formatter extends Key
                         $config[current($arrayKeys)][$variable] = false;
                     } else
                     {
+                        $config[current($arrayKeys)][$variable] = $value;
                     }
                 }
-                if (empty($section))
-                {
-                    throw new Exception\UnderflowException(sprintf(
-                        '`%s` There is an empty section.',
-                        __METHOD__
-                    ));
-                }
+                
                 next($arrayKeys);
             }
             $config['application'] = $xconfig;
