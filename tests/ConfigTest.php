@@ -30,7 +30,7 @@ final class ConfigTest extends TestCase
     public function testValidate()
     {
         $this->expectException(Exception\DomainException::class);
-        Config\Config::validate([
+        Config::validate([
             'hello' => 'world'
         ]);
     }
@@ -45,7 +45,7 @@ final class ConfigTest extends TestCase
     public function testValidate2()
     {
         $this->expectException(Exception\UnexpectedValueException::class);
-        Config\Config::validate([
+        Config::validate([
             'test' => [
                 'TEST' => 'config',
             ],
@@ -63,7 +63,7 @@ final class ConfigTest extends TestCase
     public function testValidate3()
     {
         $this->expectException(Exception\UnexpectedValueException::class);
-        Config\Config::validate([
+        Config::validate([
             'test' => [
                 'hello' => 'bar',
             ],
@@ -80,7 +80,7 @@ final class ConfigTest extends TestCase
     public function testValidate4()
     {
         $this->expectException(Exception\DomainException::class);
-        Config\Config::validate([
+        Config::validate([
             'test' => [
                 'test' => [
                     'FOO' => 'bar',
@@ -99,7 +99,7 @@ final class ConfigTest extends TestCase
     public function testValidate5()
     {
         $this->expectException(Exception\LengthException::class);
-        Config\Config::validate([
+        Config::validate([
             'test' => [
                 'WIUCHNUIWFCINQOWDIJNOIQJNWDOIJNCQIWNJDOICNJOIQWJNDCOIJNW' => 'foobar',
             ],
@@ -116,7 +116,7 @@ final class ConfigTest extends TestCase
     public function testValidate6()
     {
         Env::clearConfig();
-        $this->assertTrue(Config\Config::validate([
+        $this->assertTrue(Config::validate([
             'test' => [
                 'FOO' => 'bar',
             ],
