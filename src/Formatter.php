@@ -32,7 +32,7 @@ class Formatter extends Key
      *
      * @return string Thee formatted configuration array.
      */
-    public static function initialize(array $config = [])
+    public function initialize(array $config = [])
     {
         if (Utils::validConfigArray($config, self::ENV_DONT_EXECUTE_SET_CONFIG))
         {
