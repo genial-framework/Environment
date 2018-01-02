@@ -6,6 +6,3 @@ Environment configuration file adapter for Genial Framework.
 ```
 composer require genial-framework/env
 ```
-
-- File issues at https://github.com/Genial-Framework/Env/issues
-- Package Repository is at https://packagist.org/packages/genial-framework/env
