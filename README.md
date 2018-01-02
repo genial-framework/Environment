@@ -14,6 +14,5 @@ We suggest you use composer as it is quicker and easier. You can direct download
 > The documentation has not been created yet as Genial Framework is not close to being finished.
 
 ## Links
-- https://github.com/Genial-Framework/Genial-Framework
-- https://github.com/Genial-Framework/Env/issues
-- https://packagist.org/packages/genial-framework/env
+- File issues at https://github.com/Genial-Framework/Env/issues
+- Package Repository is at https://packagist.org/packages/genial-framework/env
