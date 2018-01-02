@@ -80,7 +80,7 @@ class Formatter extends Key
                 }
                 foreach ($section as $variable => $value)
                 {
-                    if (strval($value) == 'null')
+                    if (is_null($value) || strval($value) == 'null')
                     {
                         $config[$section][$variable] = null;
                     } elseif (strval($value) == 'true')
