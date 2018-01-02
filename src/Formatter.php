@@ -37,42 +37,34 @@ class Formatter extends Key
         if (Utils::validConfigArray($config, self::ENV_DONT_EXECUTE_SET_CONFIG))
         {
             $xconfig = [];
-            if (isset($config['application']['app_secret_key']))
+            if (isset($config['application']['app_secret_key'])
+                && !(strval($config['application']['app_secret_key']) == 'null' || strlen(strval($config['application']['app_secret_key'])) < 15))
             {
-                if (!(strval($config['application']['app_secret_key']) == 'null' || strlen(strval($config['application']['app_secret_key'])) < 15))
-                {
-                    $xconfig['application']['app_secret_key'] = strval($config['application']['app_secret_key']);
-                }
+                $xconfig['application']['app_secret_key'] = strval($config['application']['app_secret_key']);
             } else
             {
                 $xconfig['application']['app_secret_key'] = $this->generateKey();
             }
-            if (isset($config['application']['app_name']))
+            if (isset($config['application']['app_name'])
+                && !(strval($config['application']['app_name']) == ''))
             {
-                if (!(strval($config['application']['app_name']) == ''))
-                {
-                    $xconfig['application']['app_name'] = strval($config['application']['app_name']);
-                }
+                $xconfig['application']['app_name'] = strval($config['application']['app_name']);
             } else
             {
                 $xconfig['application']['app_name'] = 'Genial'; 
             }
-            if (isset($config['application']['debug']))
+            if (isset($config['application']['debug'])
+                && !(strval($config['application']['debug']) == ''))
             {
-                if (!(strval($config['application']['debug']) == ''))
-                {
-                    $xconfig['application']['debug'] = (bool) $config['application']['debug'];
-                }
+                $xconfig['application']['debug'] = (bool) $config['application']['debug'];
             } else
             {
                 $xconfig['application']['debug'] = false;
             }
-            if (isset($config['application']['log']))
+            if (isset($config['application']['log'])
+                && !(strval($config['application']['log']) == ''))
             {
-                if (!(strval($config['application']['log']) == ''))
-                {
-                    $xconfig['application']['log'] = (bool) $config['application']['log'];
-                }
+                $xconfig['application']['log'] = (bool) $config['application']['log'];
             } else
             {
                 $xconfig['application']['log'] = false;   
