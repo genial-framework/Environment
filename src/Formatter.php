@@ -32,52 +32,48 @@ class Formatter extends Key
      *
      * @throws UnderflowException If there is an empty section.
      *
-     * @return string Thee formatted configuration array.
+     * @return string The formatted configuration array.
      */
     public function initialize(array $config = [])
     {
         if (Utils::validConfigArray($config, self::ENV_DONT_EXECUTE_SET_CONFIG))
         {
             $xconfig = [];
-            if (isset($config['application']['app_secret_key'])
-                && !(strval($config['application']['app_secret_key']) == 'null' || strlen(strval($config['application']['app_secret_key'])) < 15))
+            if (isset($config['application']['APP_SECRET_KEY'])
+                && !(strval($config['application']['APP_SECRET_KEY']) == 'null' || strlen(strval($config['application']['APP_SECRET_KEY'])) < 15))
             {
-                $xconfig['application']['app_secret_key'] = strval($config['application']['app_secret_key']);
+                $xconfig['application']['APP_SECRET_KEY'] = strval($config['application']['APP_SECRET_KEY']);
             } else
             {
-                $xconfig['application']['app_secret_key'] = $this->generateKey();
+                $xconfig['application']['APP_SECRET_KEY'] = $this->generateKey();
             }
-            if (isset($config['application']['app_name'])
-                && !(strval($config['application']['app_name']) == ''))
+            if (isset($config['application']['APP_NAME'])
+                && !(strval($config['application']['APP_NAME']) == ''))
             {
-                $xconfig['application']['app_name'] = strval($config['application']['app_name']);
+                $xconfig['application']['APP_NAME'] = strval($config['application']['APP_NAME']);
             } else
             {
-                $xconfig['application']['app_name'] = 'Genial'; 
+                $xconfig['application']['APP_NAME'] = 'Genial'; 
             }
-            if (isset($config['application']['debug'])
-                && !(strval($config['application']['debug']) == ''))
+            if (isset($config['application']['DEBUG'])
+                && !(strval($config['application']['DEBUG']) == ''))
             {
-                $xconfig['application']['debug'] = (bool) $config['application']['debug'];
+                $xconfig['application']['DEBUG'] = (bool) $config['application']['DEBUG'];
             } else
             {
-                $xconfig['application']['debug'] = false;
+                $xconfig['application']['DEBUG'] = false;
             }
-            if (isset($config['application']['log'])
-                && !(strval($config['application']['log']) == ''))
+            if (isset($config['application']['LOG'])
+                && !(strval($config['application']['LOG']) == ''))
             {
-                $xconfig['application']['log'] = (bool) $config['application']['log'];
+                $xconfig['application']['LOG'] = (bool) $config['application']['LOG'];
             } else
             {
-                $xconfig['application']['log'] = false;   
+                $xconfig['application']['LOG'] = false;   
             }
-            $config['application'] = $xconfig;
+            unset($config['application']);
             foreach ($config as $section)
             {
-                if ($section == 'application')
-                {
-                    continue;
-                }
                 foreach ($section as $variable => $value)
                 {
                     if ($value == 'null')
@@ -107,6 +103,7 @@ class Formatter extends Key
                     ));
                 }
             }
+            $config['application'] = $xconfig;
             return $config;
         }
     }
