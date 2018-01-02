@@ -3,6 +3,12 @@
 -------
 Environment configuration file adapter for Genial Framework.
 
+## Installation
+
 ```
 composer require genial-framework/env
 ```
+> Composer is a must have when using Gennial Framework.
+
+## Documentation
+> The documentation has not been created yet.
