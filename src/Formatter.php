@@ -30,6 +30,8 @@ class Formatter extends Key
      *
      * @param array|[] $config The configuration array.
      *
+     * @throws UnderflowException If there is an empty section.
+     *
      * @return string Thee formatted configuration array.
      */
     public function initialize(array $config = [])
@@ -76,7 +78,6 @@ class Formatter extends Key
                 {
                     continue;
                 }
-                unset($config[$section]);
                 foreach ($section as $variable => $value)
                 {
                     if (strval($value) == 'null')
@@ -97,7 +98,13 @@ class Formatter extends Key
                     } else
                     {
                     }
-                    
+                }
+                if (empty($section))
+                {
+                    throw new Exception\UnderflowException(sprintf(
+                        '`%s` There is an empty section.',
+                        __METHOD__
+                    ));
                 }
             }
             return $config;
