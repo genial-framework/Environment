@@ -57,7 +57,7 @@ class Key implements KeyInterface
      *
      * @return string The generated key.
      */
-    public function generateKey($stringLength = 20, $keySpace = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_-+=<>,.{}[]|\;:?/`~')
+    public function generateRandomString($stringLength = 20, $keySpace = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_-+=<>,.{}[]|\;:?/`~')
     {
         $string = '';
         $max = mb_strlen($keySpace, '8bit') - 1;
