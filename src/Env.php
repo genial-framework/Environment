@@ -35,7 +35,7 @@ class Env
      * @throws UnexpectedValueException If the $section argument is empty.
      * @throws OverflowException        If the $section name does not exist.
      * @throws RuntimeException         If there is no configuration array set.
-     * @throws LengthException          If the request vriables are too long.
+     * @throws LengthException          If the request variables are too long.
      *
      * @return array Return the configuration array based on section and/or a variable value.
      */
