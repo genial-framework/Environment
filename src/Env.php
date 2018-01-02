@@ -108,7 +108,8 @@ class Env
      */
     public static function setConfig($config = [])
     {
-        if (!is_array($config)) {
+        if (!is_array($config))
+        {
             throw new Exception\InvalidArgumentException(sprintf(
                 '`%s` The `$config` variable has an invalid data type.',
                 __METHOD__
