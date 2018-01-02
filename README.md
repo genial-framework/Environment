@@ -22,3 +22,4 @@ If you wish to direct download this package you must create an autoloader to loa
 ## Links
 - File issues at https://github.com/Genial-Framework/Env/issues
 - Repository activity is at https://github.com/Genial-Framework/Env/graphs/traffic
+- Repository code frequency is at https://github.com/Genial-Framework/Env/graphs/code-frequency
