@@ -81,7 +81,7 @@ class Env
                 {
                     return strval($value);
                 }
-                if (!$variable)
+                if (!$variable || is_null($variable))
                 {
                     goto doReturn;
                 }
