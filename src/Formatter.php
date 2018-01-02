@@ -84,6 +84,7 @@ class Formatter extends Key
                 {
                     continue;
                 }
+                unset($config[$section]);
                 foreach ($section as $variable => $value)
                 {
                     if (strval($value) == 'null')
@@ -104,6 +105,7 @@ class Formatter extends Key
                     } else
                     {
                     }
+                    
                 }
             }
             return $config;
