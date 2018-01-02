@@ -82,5 +82,27 @@ final class FormatterTest extends TestCase
             ],
         ])));
     }
+    
+    /**
+     * testInitialize4().
+     *
+     * Test the random int function.
+     *
+     * @return void.
+     */
+    public function testInitialize4()
+    {
+        $formatter = new Formatter();
+        $this->assertTrue(is_array($formatter->initialize([
+            'application' => [
+                'APP_SECRET_KEY' => '[GENIAL]@%$-<:Ns3Z-3^rUc>YdF$',
+                'APP_NAME'       => 'Genial',
+                'DEBUG'          => false,
+                'LOG'            => true,
+            ],
+            'test' => [
+            ],
+        ])));
+    }
   
 }
