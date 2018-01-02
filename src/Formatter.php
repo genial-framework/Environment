@@ -32,7 +32,7 @@ class Formatter extends Key
      *
      * @throws UnderflowException If there is an empty section.
      *
-     * @return string The formatted configuration array. 
+     * @return string The formatted configuration array.
      */
     public function initialize(array $config = [])
     {
