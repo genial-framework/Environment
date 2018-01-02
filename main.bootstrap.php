@@ -21,11 +21,6 @@ $defaultConfig = [
         'DEBUG'                => false,
         'LOG'                  => true,
     ],
-    'session' => [
-        'SESSION_NAME'         => 'GenialSession',
-        'SESSION_SAVE_HANDLER' => 'files',
-        'SESSION_ENCRYPT'      => true,
-    ],
 ];
 
 if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
