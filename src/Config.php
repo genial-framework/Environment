@@ -1,7 +1,37 @@
 <?php
+/**
+ * Genial Framework.
+ *
+ * @author    Nicholas English <https://github.com/Nenglish7>
+ * @author    Genial Contributors <https://github.com/orgs/Genial-Framework/people>
+ *
+ * @link      <https://github.com/Genial-Framework/Env> for the canonical source repository.
+ * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
+ * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
+ */
+
 namespace Genial\Env;
+
+/**
+ * Config.
+ */
 class Config extends Env
 {
+    
+    /**
+     * validate().
+     *
+     * Validate the configuration array.
+     *
+     * @param array $xconfig The configuration array.
+     *
+     * @throws DomainException          If $xconfig does not have a depth of 2.
+     * @throws UnexpectedValueException If a section is not the start of an array.
+     * @throws UnexpectedValueException If the variable names are not capital letters.
+     * @throws LengthException          If the variable name or value is too long.
+     *
+     * @return bool|true True if the configuration array is valid.
+     */
     public static function validate(array $xconfig)
     {
         if (array_depth($xconfig) != 2)
@@ -42,4 +72,5 @@ class Config extends Env
         self::$config = $xconfig;
         return true;
     }
+    
 }
