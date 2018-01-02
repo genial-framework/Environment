@@ -73,7 +73,7 @@ class Formatter extends Key
             }
             unset($config['application']);
             $arrayKeys = array_keys($config);
-            reset($config)
+            reset($config);
             reset($arrayKeys);
             foreach ($config as $section)
             {
