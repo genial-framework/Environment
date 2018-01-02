@@ -107,7 +107,6 @@ class Formatter extends Key
                         $config[current($arrayKeys)][$variable] = $value;
                     }
                 }
-                
                 next($arrayKeys);
             }
             $config['application'] = $xconfig;
