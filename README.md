@@ -11,4 +11,4 @@ composer require genial-framework/env
 We suggest you use composer as it is quicker and easier. You can direct download the package, but if you do that then you need to create an autoloader to load all the files.
 
 ## Links
-- https://github.com/Genial-Framework/Env/issues
+- File issues at https://github.com/Genial-Framework/Env/issues
