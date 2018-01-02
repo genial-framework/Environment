@@ -13,9 +13,10 @@ We suggest you use composer as it is quicker and easier. You can direct download
 ## Contributing
 
 
-> We will make a website for Genial Framework and it will be public when the first release of the entire framework is finished.
+
 
 ## Links
+> We will make a website for Genial Framework and it will be public when the first release of the entire framework is finished.
 - https://github.com/Genial-Framework/Genial-Framework
 - https://github.com/Genial-Framework/Env/issues
 - https://packagist.org/packages/genial-framework/env
