@@ -12,5 +12,3 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 ## Links
 - https://github.com/Genial-Framework/Env/issues
-- https://github.com/Genial-Framework/Env/tree/master/docs/book
-
