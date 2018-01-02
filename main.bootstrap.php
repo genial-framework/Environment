@@ -26,7 +26,8 @@ $defaultConfig = [
 if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
 {
     $env = parse_ini_file(APP_ROOT . '/.env.ini', true, INI_SCANNER_RAW);
-    Env::setConfig(Formatter::initialize($env));
+    $formatter = new Formatter();
+    Env::setConfig($formatter->initialize($env));
 } else
 {
     Env::setConfig($defaultConfig);
@@ -34,6 +35,7 @@ if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
 
 unset($env);
 unset($defaultConfig);
+unset($formatter);
 
 function env($section, $variable = null, $defRetVal = '')
 {
