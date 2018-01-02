@@ -92,8 +92,9 @@ final class FormatterTest extends TestCase
      */
     public function testInitialize4()
     {
+        $this->expectException(Exception\UnderflowException::class)
         $formatter = new Formatter();
-        $this->assertTrue(is_array($formatter->initialize([
+        $array = $formatter->initialize([
             'application' => [
                 'APP_SECRET_KEY' => '[GENIAL]@%$-<:Ns3Z-3^rUc>YdF$',
                 'APP_NAME'       => 'Genial',
@@ -102,7 +103,7 @@ final class FormatterTest extends TestCase
             ],
             'test' => [
             ],
-        ])));
+        ]);
     }
   
 }
