@@ -92,7 +92,7 @@ final class FormatterTest extends TestCase
      */
     public function testInitialize4()
     {
-        $this->expectException(Exception\UnderflowException::class)
+        $this->expectException(Exception\UnderflowException::class);
         $formatter = new Formatter();
         $array = $formatter->initialize([
             'application' => [
