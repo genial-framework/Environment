@@ -68,7 +68,7 @@ final class KeyTest extends TestCase
     public function testGenerateRandomBytes()
     {
         $key = new Key();
-        $this->assertTrue(is_string($key->generateRandomBytes()));
+        $this->assertTrue(is_string($key->generateRandomBytes(7)));
     }
   
     /**
