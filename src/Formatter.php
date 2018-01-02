@@ -39,43 +39,43 @@ class Formatter extends Key
             $xconfig = [];
             if (isset($config['application']['app_secret_key']))
             {
-                if (strval($config['application']['app_secret_key']) == 'null' || strlen(strval($config['application']['app_secret_key'])) < 15)
-                {
-                    $xconfig['application']['app_secret_key'] = $this->generateKey();
-                } else
+                if (!(strval($config['application']['app_secret_key']) == 'null' || strlen(strval($config['application']['app_secret_key'])) < 15))
                 {
                     $xconfig['application']['app_secret_key'] = strval($config['application']['app_secret_key']);
                 }
+            } else
+            {
+                $xconfig['application']['app_secret_key'] = $this->generateKey();
             }
             if (isset($config['application']['app_name']))
             {
-                if (strval($config['application']['app_name']) == '')
+                if (!(strval($config['application']['app_name']) == ''))
                 {
                     $xconfig['application']['app_name'] = strval($config['application']['app_name']);
-                } else
-                {
-                    $xconfig['application']['app_name'] = 'Genial';
                 }
+            } else
+            {
+                $xconfig['application']['app_name'] = 'Genial'; 
             }
             if (isset($config['application']['debug']))
             {
-                if (strval($config['application']['debug']) == '')
-                {
-                    $xconfig['application']['debug'] = false;
-                } else
+                if (!(strval($config['application']['debug']) == ''))
                 {
                     $xconfig['application']['debug'] = (bool) $config['application']['debug'];
                 }
+            } else
+            {
+                $xconfig['application']['debug'] = false;
             }
             if (isset($config['application']['log']))
             {
-                if (strval($config['application']['log']) == '')
-                {
-                    $xconfig['application']['log'] = false;
-                } else
+                if (!(strval($config['application']['log']) == ''))
                 {
                     $xconfig['application']['log'] = (bool) $config['application']['log'];
                 }
+            } else
+            {
+                $xconfig['application']['log'] = false;   
             }
             $config['application'] = $xconfig;
             foreach ($config as $section)
