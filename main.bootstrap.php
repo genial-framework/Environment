@@ -31,15 +31,17 @@ if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
     {
         $key = new Key();
         $rsp_key = $key->generateKey();
-        $env['application']['APP_SECRET_KEY'] = $rsp_key;
         $rsp_file = file_get_contents(APP_ROOT . '/.env.ini');
-        if ($env['application']['APP_SECRET_KEY'] == 'null')
+        if (isset($env['application']['APP_SECRET_KEY']) && $env['application']['APP_SECRET_KEY'] == 'null')
         {
-            $rsp_file = str_replace('APP_SECRET_KEY=null', "APP_SECRET_KEY=$rsp_key", $rsp_file);
+            $rsp_file = str_replace('APP_SECRET_KEY=null', "APP_SECRET_KEY = $rsp_key", $rsp_file);
+            $rsp_file = str_replace('APP_SECRET_KEY= null', "APP_SECRET_KEY = $rsp_key", $rsp_file);
+            $rsp_file = str_replace('APP_SECRET_KEY =null', "APP_SECRET_KEY = $rsp_key", $rsp_file);
+            $rsp_file = str_replace('APP_SECRET_KEY = null', "APP_SECRET_KEY = $rsp_key", $rsp_file);
             file_put_contents(APP_ROOT . '/.env.ini', $rsp_file, LOCK_EX);
             goto doneRsp;
         }
-        $rsp_file = str_replace('[application]', "[application] \n APP_SECRET_KEY=$rsp_key \n", $rsp_file);
+        $rsp_file = str_replace('[application]', "[application]\nAPP_SECRET_KEY = $rsp_key", $rsp_file);
         file_put_contents(APP_ROOT . '/.env.ini', $rsp_file, LOCK_EX);
     }
     doneRsp:
