@@ -26,7 +26,7 @@ $defaultConfig = [
 if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
 {
     $env = parse_ini_file(APP_ROOT . '/.env.ini', true, INI_SCANNER_RAW);
-    $formatter = new Formatter();
+    $formatter = new Genial\Env\Formatter();
     Env::setConfig($formatter->initialize($env));
 } else
 {
