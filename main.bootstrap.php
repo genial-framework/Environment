@@ -45,6 +45,7 @@ if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
         file_put_contents(APP_ROOT . '/.env.ini', $rsp_file, LOCK_EX);
     }
     doneRsp:
+    $env['application']['APP_SECRET_KEY'] = $rsp_key;
     Env::setConfig($env);
 } else
 {
