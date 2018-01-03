@@ -24,7 +24,6 @@ class Config extends Env
      * Validate the configuration array.
      *
      * @param array $xconfig The configuration array.
-     * @param int $execute   Should the config class ececute the set config function.
      *
      * @throws DomainException          If $xconfig does not have a depth of 2.
      * @throws UnexpectedValueException If a section is not the start of an array.
