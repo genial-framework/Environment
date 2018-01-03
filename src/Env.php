@@ -19,11 +19,6 @@ class Env
 {
     
     /**
-     * @const ENV_DONT_EXECUTE_SET_CONFIG Set the configuration array yet.
-     */
-    const ENV_EXECUTE_SET_CONFIG = 1;  
-    
-    /**
      * @var array|null $config The configuration array.
      */
     protected static $config = null;
@@ -120,7 +115,7 @@ class Env
                 __METHOD__
             ));
         }
-        return Utils::validConfigArray($config, self::ENV_EXECUTE_SET_CONFIG);
+        return Utils::validConfigArray($config);
     }
 
     /**
