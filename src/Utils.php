@@ -23,14 +23,13 @@ class Utils
      *
      * Validate the configuration array.
      *
-     * @param array|null                                 $config The config array.
-     * @param int|Formatter::ENV_DONT_EXECUTE_SET_CONFIG $config Should the config class ececute the set config function.
+     * @param array|null $config The config array.
      *
      * @throws UnderflowException If the array is empty.
      *
      * @return bool|true True if the configuration array is valid.
      */
-    public static function validConfigArray(array $config = [], $execute = Formatter::ENV_DONT_EXECUTE_SET_CONFIG)
+    public static function validConfigArray(array $config = [])
     {
         if (empty($config))
         {
@@ -39,7 +38,7 @@ class Utils
                 __METHOD__
             ));
         }
-        return Config::validate($config, $execute);
+        return Config::validate($config);
     }
     
 }
