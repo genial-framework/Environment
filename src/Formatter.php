@@ -56,7 +56,7 @@ class Formatter extends Key
                 $xconfig['application']['APP_NAME'] = 'Genial'; 
             }
             if (isset($config['application']['DEBUG'])
-                && !(strval($config['application']['DEBUG']) == ''))
+                && !(strval($config['application']['DEBUG']) === ''))
             {
                 $xconfig['application']['DEBUG'] = (bool) $config['application']['DEBUG'];
             } else
@@ -64,7 +64,7 @@ class Formatter extends Key
                 $xconfig['application']['DEBUG'] = false;
             }
             if (isset($config['application']['LOG'])
-                && !(strval($config['application']['LOG']) == ''))
+                && !(strval($config['application']['LOG']) === ''))
             {
                 $xconfig['application']['LOG'] = (bool) $config['application']['LOG'];
             } else
