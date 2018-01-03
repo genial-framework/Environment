@@ -23,7 +23,7 @@ $defaultConfig = [
         'LOG'            => true,
     ],
     'cookie' => [
-        'PREFIX'         => '[GENIAL]%'
+        'PREFIX'         => '[GENIAL]%',
         'PATH'           => '/',
         'DOMAIN'         => null,
         'SECURE'         => false,
