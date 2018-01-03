@@ -33,7 +33,7 @@ class Config extends Env
      *
      * @return bool|true True if the configuration array is valid.
      */
-    public static function validate(array $xconfig, $execute)
+    public static function validate(array $xconfig)
     {
         if (array_depth($xconfig) != 2)
         {
@@ -69,11 +69,8 @@ class Config extends Env
                 }
             }
         }
-        if ($execute !== Formatter::ENV_DONT_EXECUTE_SET_CONFIG)
-        {
-            self::clearConfig();
-            self::$config = $xconfig;
-        }
+        self::clearConfig();
+        self::$config = $xconfig;
         return true;
     }
     
