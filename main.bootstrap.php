@@ -22,6 +22,13 @@ $defaultConfig = [
         'DEBUG'          => false,
         'LOG'            => true,
     ],
+    'cookie' => [
+        'PREFIX'         => '[GENIAL]%'
+        'PATH'           => '/',
+        'DOMAIN'         => null,
+        'SECURE'         => false,
+        'HTTP_ONLY'      => true,   
+    ]
 ];
 
 if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
