@@ -10,7 +10,7 @@
  * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
  */
 
-use Genial\Env\Env;
+use Genial\Env;
 
 define('ENV_ADAPTER_ACTIVE', true);
 
@@ -26,8 +26,23 @@ $defaultConfig = [
 if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
 {
     $env = parse_ini_file(APP_ROOT . '/.env.ini', true, INI_SCANNER_RAW);
-    $formatter = new Genial\Env\Formatter();
-    Env::setConfig($formatter->initialize($env));
+    if (!isset($env['application']['APP_SECRET_KEY']) || $env['application']['APP_SECRET_KEY'] == 'null')
+    {
+        $key = new Key();
+        $rsp_key = $key->generateKey();
+        $env['application']['APP_SECRET_KEY'] = $rsp_key;
+        $rsp_file = file_get_contents(APP_ROOT . '/.env.ini');
+        if ($env['application']['APP_SECRET_KEY'] == 'null')
+        {
+            $rsp_file = str_replace('APP_SECRET_KEY=null', "APP_SECRET_KEY=$rsp_key", $rsp_file);
+            file_put_contents(APP_ROOT . '/.env.ini', $rsp_file, LOCK_EX);
+            goto doneRsp;
+        }
+        $rsp_file = str_replace('[application]', "[application] \n APP_SECRET_KEY=$rsp_key \n", $rsp_file);
+        file_put_contents(APP_ROOT . '/.env.ini', $rsp_file, LOCK_EX);
+    }
+    doneRsp:
+    Env::setConfig($env);
 } else
 {
     Env::setConfig($defaultConfig);
@@ -35,7 +50,6 @@ if (defined('APP_ROOT') && file_exists(APP_ROOT . '/.env.ini'))
 
 unset($env);
 unset($defaultConfig);
-unset($formatter);
 
 function env($section, $variable = null, $defRetVal = '')
 {
