@@ -10,7 +10,8 @@
  * @license   <https://github.com/Genial-Framework/Env/blob/master/LICENSE> New BSD License.
  */
 
-use Genial\Env;
+use Genial\Env\Env;
+use Genial\Env\Key;
 
 define('ENV_ADAPTER_ACTIVE', true);
 
