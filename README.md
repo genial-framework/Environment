@@ -13,12 +13,6 @@ composer require genial-framework/env
 
 If you wish to direct download this package you must create an autoloader to load all of the files. Generally you can just install the whole framework using the installer to make things easy.
 
-## Documentation
-> The documentation has not been created yet.
-
-## Contributing
-> The contributing guidelines have not been created yet.
-
 ## Links
 - File issues at https://github.com/Genial-Framework/Env/issues
 - Repository activity is at https://github.com/Genial-Framework/Env/graphs/traffic
