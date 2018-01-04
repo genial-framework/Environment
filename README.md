@@ -14,6 +14,6 @@ composer require genial-framework/env
 If you wish to direct download this package you must create an autoloader to load all of the files. Generally you can just install the whole framework using the installer to make things easy.
 
 ## Links
-- File issues at https://github.com/Genial-Framework/Env/issues
-- Repository activity is at https://github.com/Genial-Framework/Env/graphs/traffic
-- Repository code frequency is at https://github.com/Genial-Framework/Env/graphs/code-frequency
+- File issues at https://github.com/Genial-Framework/Environment/issues
+- Repository activity is at https://github.com/Genial-Framework/Environment/graphs/traffic
+- Repository code frequency is at https://github.com/Genial-Framework/Environment/graphs/code-frequency
