@@ -6,6 +6,8 @@ php:
 os:
     - windows
     - linux
+git:
+    depth: 1
 matrix:
     fast_finish: true
 sudo: false
