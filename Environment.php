@@ -38,8 +38,8 @@ class Environment
         if (\strlen($sec) > 30 || \strlen($var) > 250) {
             throw new Exception\LengthException(\sprintf(
                 'The `$section` and/or `$variable` argument is too long. Passed: `$sec` = `%s` `$var` = `%s`.',
-                \strlen($sec),
-                \strlen($var)
+                (string) \strlen($sec),
+                (string) \strlen($var)
             ));
         }
         if (!self::$conf) {
