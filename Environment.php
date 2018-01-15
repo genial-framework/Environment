@@ -13,5 +13,5 @@ class Environment
     /**
      * @var array|null $conf The config array.
      */
-    protected static $conf = null;
+    protected static $conf = \null;
 }
