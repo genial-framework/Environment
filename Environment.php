@@ -56,7 +56,7 @@ class Environment
         } else {
             throw new Exception\UnexpectedValueException(\sprintf(
                 'The section name is not in the config array. Passed: `%s`.',
-                \htmlspecialchars($sec, \ENT_QUOTES, 'UTF-8')
+                \e($sec)
             ));
         }
         return $env[$sec];
