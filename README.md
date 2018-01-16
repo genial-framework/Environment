@@ -10,6 +10,5 @@ You can use the installer by going to their [website](https://getcomposer.org/) 
 ```sh
 composer require syzerphp-framework/environment
 ```
-## Links
-- https://github.com/SyzerPHP/Environment/pulls
-- https://github.com/SyzerPHP/Environment/pulse
+
+---------------------
