@@ -14,5 +14,8 @@ final class KeyTest extends TestCase
     public function testGenerateKey(): void
     {
         $this->assertTrue(\is_string(Key::generateKey()));
+        $this->assertTrue(\strlen(Key::generateKey()) > 12);
+        $this->assertTrue(\strlen(Key::generateKey()) > 8);
+        $this->assertTrue(\substr(Key::generateKey(), 0, 8) === '[SYZER]@');
     }
 }
