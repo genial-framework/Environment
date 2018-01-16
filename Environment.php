@@ -33,11 +33,11 @@ class Environment
     {
         $sec = \trim($sec);
         if (\empty($sec) || $sec == '') {
-            throw new Exception\DomainException('The `$sec` variable is empty.');
+            throw new Exception\DomainException('The `$sec` argument is empty.');
         }
         if (\strlen($sec) > 30 || \strlen($var) > 250) {
             throw new Exception\LengthException(\sprintf(
-                'The `$sec` and/or `$var` variable is too long. Passed: `$sec` = `%s` `$var` = `%s`.',
+                'The `$sec` and/or `$var` argument is too long. Passed: `$sec` = `%s` `$var` = `%s`.',
                 (string) \strlen($sec),
                 (string) \strlen($var)
             ));
