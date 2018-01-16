@@ -27,7 +27,7 @@ class Config extends Environment
      */
     public static function validate(array $conf = []): void
     {
-        if (\empty($conf)) {
+        if (empty($conf)) {
             throw new Exception\DomainException('The config array is empty.');
         }
         if (\depth($conf) != 2) {
