@@ -1,4 +1,6 @@
+phpunit.xml
 .travis.yml
+.coveralls.yml
 composer.json
 composer.lock
 composer.phar
@@ -6,5 +8,3 @@ composer.phar
 /tests/
 README.md
 LICENSE.md
-.coveralls.yml
-phpunit.xml
