@@ -15,19 +15,19 @@ class Config extends Environment
      *
      * Validate the config array.
      *
-     * @param array|[] $conf The config array.
+     * @param array $conf The config array.
      *
-     * @throws DomainException          If `$conf` is empty.
-     * @throws DomainException          If `$conf` does not have a depth of 2.
+     * @throws DomainException          If `$conf` argument is empty.
+     * @throws DomainException          If `$conf` argument does not have a depth of 2.
      * @throws UnexpectedValueException If a section is not the start of an array.
      * @throws UnexpectedValueException If the section variable names are not capital letters.
      * @throws LengthException          If the section variable name and/or value is too long.
      *
      * @return void.
      */
-    public static function validate(array $conf = []): void
+    public static function validate(array $conf): void
     {
-        if (empty($conf)) {
+        if (\empty($conf)) {
             throw new Exception\DomainException('The config array is empty.');
         }
         if (\depth($conf) != 2) {
