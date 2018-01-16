@@ -5,7 +5,7 @@
 
 > Composer should be used as your main dependency manager.
 
-You can use the installer by going to their [website](https://getcomposer.org/) and clicking download and it will show all the installation <br />instructions.Once it has been installed correctly you proceed with running the console command below.
+You can use the installer by going to their [website](https://getcomposer.org/) and clicking download and it will show all the installation instructions. Once it has been installed correctly you proceed with running the console command below.
 
 ```sh
 composer require syzerphp-framework/environment
