@@ -14,7 +14,7 @@ final class ConfigTest extends TestCase
     public function testValidate()
     {
         $this->expectException(Exception\DomainException::class);
-        Config::validate(); /* Pass empty array */
+        Config::validate([]); /* Pass empty array */
     }
     public function testValidate2()
     {
