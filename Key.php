@@ -13,7 +13,7 @@ class Key
     /**
      * @var string|%% $prefix The key prefix.
      */
-    private $prefix = '[SYZER]@';
+    private static $prefix = '[SYZER]@';
     /**
      * generateKey().
      *
@@ -21,8 +21,8 @@ class Key
      *
      * @return string The generated key.
      */
-    public function generateKey(): string
+    public static function generateKey(): string
     {
-        return (string) $this->prefix . \bin2hex(\random_bytes(10));
+        return (string) self::prefix . \bin2hex(\random_bytes(10));
     }
 }
