@@ -30,24 +30,24 @@ class Config extends Environment
         if (\empty($conf)) {
             throw new Exception\DomainException('The config array is empty.');
         }
-        if (\array_depth($conf) != 2) {
+        if (\depth($conf) != 2) {
             throw new Exception\DomainException(\sprintf(
                 'The config array does not have a depth of 2. Depth: `%s`.',
-                (string) \array_depth($conf)
+                (string) \depth($conf)
             ));
         }
         foreach ($conf as $var => $val) {
             if (!\is_array($val)) {
                 throw new Exception\UnexpectedValueException(\sprintf(
                     'The section is not the start of an array. Passed: `%s`.',
-                    \htmlspecialchars($var, \ENT_QUOTES, 'UTF-8')
+                    \e($var)
                 ));
             }
             foreach ($val as $var2 => $val2) {
                 if (!\ctype_upper(\str_replace('_', '', $var2))) {
                     throw new Exception\UnexpectedValueException(\sprintf(
                         'The section variable name must all be caps. Passed: `%s`.',
-                        \htmlspecialchars($var2, \ENT_QUOTES, 'UTF-8')
+                        \e($var2)
                     ));
                 }
                 if (\strlen($var2) > 30 || \strlen($val2) > 250) {
