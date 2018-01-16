@@ -17,14 +17,14 @@
         bootstrap="tests/bootstrap.php">
     <filter>
         <whitelist>
-            <directory>./src</directory>
+            <directory>./</directory>
             <exclude>
                 <directory>./vendor</directory>
                 <directory>./tests</directory>
             </exclude>
         </whitelist>
     </filter>
-    <testsuite name="Genial-Framework/Env Test Suite">
+    <testsuite name="SyzerPHP/Environment Test Suite">
         <directory suffix=".php">./tests</directory>
     </testsuite>
 </phpunit>
