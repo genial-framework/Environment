@@ -10,5 +10,3 @@ You can use the installer by going to their [website](https://getcomposer.org/) 
 ```sh
 composer require syzerphp-framework/environment
 ```
-
----------------------
