@@ -16,7 +16,7 @@ final class ConfigTest extends TestCase
         $this->expectException(Exception\DomainException::class);
         Config::validate([]); /* Pass empty array */
     }
-    public function testValidate()
+    public function testValidate2()
     {
         $this->expectException(Exception\DomainException::class);
         Config::validate(['hello' => 'world']); /* Modify array depth */
