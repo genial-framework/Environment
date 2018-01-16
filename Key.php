@@ -23,6 +23,6 @@ class Key
      */
     public static function generateKey(): string
     {
-        return (string) self::prefix . \bin2hex(\random_bytes(10));
+        return (string) self::$prefix . \bin2hex(\random_bytes(10));
     }
 }
