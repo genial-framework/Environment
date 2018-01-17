@@ -22,3 +22,7 @@ function depth($var)
     }
     return $depth; 
 }
+function env($sec, $var)
+{
+
+}
