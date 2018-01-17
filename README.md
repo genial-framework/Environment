@@ -4,12 +4,6 @@
 ## Getting Started
 Environment component for SyzerPHP Framework.
 
-### Prerequisites
-
-> It is recommended that you use the latest version of PHP <br />
-
-- PHP `^7.2`
-
 ### Installation
 
 > Composer should be used as your main dependency manager.
