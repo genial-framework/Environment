@@ -11,8 +11,19 @@ use \PHPUnit\Framework\TestCase;
  */
 final class EnvironmentTest extends TestCase
 {
-    public function testGenerateKey(): void
+    public function testSetConfig(): void
     {
-        $this->assertTrue(\is_string(Key::generateKey()));
+        Environment::setConfig(
+            [
+                'application' => [
+                                     'NAME' => 'SyzerPHP',
+                                     'FOO' => 'BAR',
+                                     'HELLO' => 'WORLD'
+                                 ]
+            ]
+        );
+        $this->assertTrue(Environment::getConfig('application', 'name') === 'SyzerPHP');
+        $this->assertTrue(Environment::getConfig('application', 'hello') === 'WORLD');
+        $this->assertTrue(Environment::getConfig('application', 'foo') === 'BAR');
     }
 }
