@@ -31,15 +31,15 @@ class Environment
      */
     public static function getConfig(string $sec, string $var = null): string
     {
-        $sec = \trim($sec);
-        if (\empty($sec) || $sec == '') {
+        $sec = trim($sec);
+        if (empty($sec) || $sec == '') {
             throw new Exception\DomainException('The `$sec` argument is empty.');
         }
-        if (\strlen($sec) > 30 || \strlen($var) > 250) {
+        if (strlen($sec) > 30 || strlen($var) > 250) {
             throw new Exception\LengthException(\sprintf(
                 'The `$sec` and/or `$var` argument is too long. Passed: `$sec` = `%s` `$var` = `%s`.',
-                (string) \strlen($sec),
-                (string) \strlen($var)
+                (string) strlen($sec),
+                (string) strlen($var)
             ));
         }
         if (!self::$conf) {
@@ -49,14 +49,14 @@ class Environment
         }
         if (isset($env[$sec])) {
             foreach ($env[$sec] as $var2 => $val) {
-                if (!\is_null($var) && $var2 == \strtoupper($var)) {
-                    return \strval($val);
+                if (!is_null($var) && $var2 == strtoupper($var)) {
+                    return strval($val);
                 }
             }
         } else {
             throw new Exception\UnexpectedValueException(\sprintf(
                 'The section name is not in the config array. Passed: `%s`.',
-                \e($sec)
+                e($sec)
             ));
         }
         return $env[$sec];
