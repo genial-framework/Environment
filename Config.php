@@ -47,7 +47,7 @@ class Config extends Environment
                 if (!ctype_upper(str_replace('_', '', $var2))) {
                     throw new Exception\UnexpectedValueException(\sprintf(
                         'The section variable name must all be caps. Passed: `%s`.',
-                        \e($var2)
+                        e($var2)
                     ));
                 }
                 if (strlen($var2) > 30 || strlen($val2) > 250) {
