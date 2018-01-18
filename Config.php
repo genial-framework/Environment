@@ -27,34 +27,34 @@ class Config extends Environment
      */
     public static function validate(array $conf): void
     {
-        if (\empty($conf)) {
+        if (empty($conf)) {
             throw new Exception\DomainException('The config array is empty.');
         }
-        if (\depth($conf) != 2) {
+        if (depth($conf) != 2) {
             throw new Exception\DomainException(\sprintf(
                 'The config array does not have a depth of 2. Depth: `%s`.',
                 (string) \depth($conf)
             ));
         }
         foreach ($conf as $var => $val) {
-            if (!\is_array($val)) {
+            if (!is_array($val)) {
                 throw new Exception\UnexpectedValueException(\sprintf(
                     'The section is not the start of an array. Passed: `%s`.',
-                    \e($var)
+                    e($var)
                 ));
             }
             foreach ($val as $var2 => $val2) {
-                if (!\ctype_upper(\str_replace('_', '', $var2))) {
+                if (!ctype_upper(str_replace('_', '', $var2))) {
                     throw new Exception\UnexpectedValueException(\sprintf(
                         'The section variable name must all be caps. Passed: `%s`.',
                         \e($var2)
                     ));
                 }
-                if (\strlen($var2) > 30 || \strlen($val2) > 250) {
+                if (strlen($var2) > 30 || strlen($val2) > 250) {
                     throw new Exception\LengthException(sprintf(
                         'The `$var2` and/or `$val2` variable is too long. Passed: `$var2` = `%s` `$val2` = `%s`.',
-                        (string) \strlen($var2),
-                        (string) \strlen($val2)
+                        (string) strlen($var2),
+                        (string) strlen($val2)
                     ));
                 }
             }
